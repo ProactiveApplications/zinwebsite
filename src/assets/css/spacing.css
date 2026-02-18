@@ -1,0 +1,450 @@
+/*
+    ========================================
+    SPACING UTILITIES
+    ========================================
+    This file defines a set of spacing utilities for margins and padding, as well as a responsive grid system. 
+    The spacing values are defined using CSS variables for easy maintenance and consistency across the project.
+    The grid system allows for flexible layouts that adapt to different screen sizes, making it suitable for responsive design.
+    ========================================
+
+    grid
+    container
+    padding
+    margin
+*/
+:root {
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+    --gutter-x: 20px;
+    --gutter-y: 20px;
+}
+
+/* ========================================
+   CONTAINER CLASSES
+   ======================================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+.container-fluid {
+    width: 100%;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--spacing-md);
+}
+
+/* Grid Column Classes */
+.col-1 {
+    grid-column: span 1;
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.col-3 {
+    grid-column: span 3;
+}
+
+.col-4 {
+    grid-column: span 4;
+}
+
+.col-5 {
+    grid-column: span 5;
+}
+
+.col-6 {
+    grid-column: span 6;
+}
+
+.col-7 {
+    grid-column: span 7;
+}
+
+.col-8 {
+    grid-column: span 8;
+}
+
+.col-9 {
+    grid-column: span 9;
+}
+
+.col-10 {
+    grid-column: span 10;
+}
+
+.col-11 {
+    grid-column: span 11;
+}
+
+.col-12 {
+    grid-column: span 12;
+}
+
+
+/* Responsive Grid - Tablet */
+@media (max-width: 1023px) {
+    .col-tablet-1 {
+        grid-column: span 1;
+    }
+
+    .col-tablet-2 {
+        grid-column: span 2;
+    }
+
+    .col-tablet-3 {
+        grid-column: span 3;
+    }
+
+    .col-tablet-4 {
+        grid-column: span 4;
+    }
+
+    .col-tablet-5 {
+        grid-column: span 5;
+    }
+
+    .col-tablet-6 {
+        grid-column: span 6;
+    }
+
+    .col-tablet-7 {
+        grid-column: span 7;
+    }
+
+    .col-tablet-8 {
+        grid-column: span 8;
+    }
+
+    .col-tablet-9 {
+        grid-column: span 9;
+    }
+
+    .col-tablet-10 {
+        grid-column: span 10;
+    }
+
+    .col-tablet-11 {
+        grid-column: span 11;
+    }
+
+    .col-tablet-12 {
+        grid-column: span 12;
+    }
+}
+
+/* Responsive Grid - Mobile */
+@media (max-width: 767px) {
+    .col-mobile-1 {
+        grid-column: span 1;
+    }
+
+    .col-mobile-2 {
+        grid-column: span 2;
+    }
+
+    .col-mobile-3 {
+        grid-column: span 3;
+    }
+
+    .col-mobile-4 {
+        grid-column: span 4;
+    }
+
+    .col-mobile-5 {
+        grid-column: span 5;
+    }
+
+    .col-mobile-6 {
+        grid-column: span 6;
+    }
+
+    .col-mobile-7 {
+        grid-column: span 7;
+    }
+
+    .col-mobile-8 {
+        grid-column: span 8;
+    }
+
+    .col-mobile-9 {
+        grid-column: span 9;
+    }
+
+    .col-mobile-10 {
+        grid-column: span 10;
+    }
+
+    .col-mobile-11 {
+        grid-column: span 11;
+    }
+
+    .col-mobile-12 {
+        grid-column: span 12 !important;
+    }
+}
+
+
+
+
+/* ========================================
+   SPACING UTILITIES
+   ======================================== */
+/* Margin */
+.m-0 {
+    margin: 0;
+}
+
+.m-1 {
+    margin: var(--spacing-xs);
+}
+
+.m-2 {
+    margin: var(--spacing-sm);
+}
+
+.m-3 {
+    margin: var(--spacing-md);
+}
+
+.m-4 {
+    margin: var(--spacing-lg);
+}
+
+.m-5 {
+    margin: var(--spacing-xl);
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mt-1 {
+    margin-top: var(--spacing-xs);
+}
+
+.mt-2 {
+    margin-top: var(--spacing-sm);
+}
+
+.mt-3 {
+    margin-top: var(--spacing-md);
+}
+
+.mt-4 {
+    margin-top: var(--spacing-lg);
+}
+
+.mt-5 {
+    margin-top: var(--spacing-xl);
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.mb-2 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.mb-4 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mb-5 {
+    margin-bottom: var(--spacing-xl);
+}
+
+.ml-0 {
+    margin-left: 0;
+}
+
+.ml-1 {
+    margin-left: var(--spacing-xs);
+}
+
+.ml-2 {
+    margin-left: var(--spacing-sm);
+}
+
+.ml-3 {
+    margin-left: var(--spacing-md);
+}
+
+.ml-4 {
+    margin-left: var(--spacing-lg);
+}
+
+.ml-5 {
+    margin-left: var(--spacing-xl);
+}
+
+.mr-0 {
+    margin-right: 0;
+}
+
+.mr-1 {
+    margin-right: var(--spacing-xs);
+}
+
+.mr-2 {
+    margin-right: var(--spacing-sm);
+}
+
+.mr-3 {
+    margin-right: var(--spacing-md);
+}
+
+.mr-4 {
+    margin-right: var(--spacing-lg);
+}
+
+.mr-5 {
+    margin-right: var(--spacing-xl);
+}
+
+/* Padding */
+.p-0 {
+    padding: 0;
+}
+
+.p-1 {
+    padding: var(--spacing-xs);
+}
+
+.p-2 {
+    padding: var(--spacing-sm);
+}
+
+.p-3 {
+    padding: var(--spacing-md);
+}
+
+.p-4 {
+    padding: var(--spacing-lg);
+}
+
+.p-5 {
+    padding: var(--spacing-xl);
+}
+
+.pt-0 {
+    padding-top: 0;
+}
+
+.pt-1 {
+    padding-top: var(--spacing-xs);
+}
+
+.pt-2 {
+    padding-top: var(--spacing-sm);
+}
+
+.pt-3 {
+    padding-top: var(--spacing-md);
+}
+
+.pt-4 {
+    padding-top: var(--spacing-lg);
+}
+
+.pt-5 {
+    padding-top: var(--spacing-xl);
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
+
+.pb-1 {
+    padding-bottom: var(--spacing-xs);
+}
+
+.pb-2 {
+    padding-bottom: var(--spacing-sm);
+}
+
+.pb-3 {
+    padding-bottom: var(--spacing-md);
+}
+
+.pb-4 {
+    padding-bottom: var(--spacing-lg);
+}
+
+.pb-5 {
+    padding-bottom: var(--spacing-xl);
+}
+
+.pl-0 {
+    padding-left: 0;
+}
+
+.pl-1 {
+    padding-left: var(--spacing-xs);
+}
+
+.pl-2 {
+    padding-left: var(--spacing-sm);
+}
+
+.pl-3 {
+    padding-left: var(--spacing-md);
+}
+
+.pl-4 {
+    padding-left: var(--spacing-lg);
+}
+
+.pl-5 {
+    padding-left: var(--spacing-xl);
+}
+
+.pr-0 {
+    padding-right: 0;
+}
+
+.pr-1 {
+    padding-right: var(--spacing-xs);
+}
+
+.pr-2 {
+    padding-right: var(--spacing-sm);
+}
+
+.pr-3 {
+    padding-right: var(--spacing-md);
+}
+
+.pr-4 {
+    padding-right: var(--spacing-lg);
+}
+
+.pr-5 {
+    padding-right: var(--spacing-xl);
+}
