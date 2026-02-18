@@ -1,15 +1,16 @@
 ---
+const pageTitle = 'Home';
 import Layout from '../../layouts/MainLayout.astro';
-import Hero from '../../layouts/components/homepage/01_hero.astro';
-import Problem from '../../layouts/components/homepage/02_problem.astro';
-import Solution from '../../layouts/components/homepage/05_solution.astro';
-import Features from '../../layouts/components/homepage/10_features.astro';
-import CTARow from '../../layouts/components/website/cta-row.astro';
-import FAQs from '../../layouts/components/homepage/15_faqs.astro';
-import NegSection from '../../layouts/components/homepage/20_negsection.astro';
-import CTAPage from '../../layouts/components/website/cta-page.astro';
+import Hero from '../../components/homepage/01_hero.astro';
+import Problem from '../../components/homepage/02_problem.astro';
+import Solution from '../../components/homepage/05_solution.astro';
+import Features from '../../components/homepage/10_features.astro';
+import CTARow from '../../components/website/cta-row.astro';
+import FAQs from '../../components/homepage/15_faqs.astro';
+import NegSection from '../../components/homepage/20_negsection.astro';
+import CTAPage from '../../components/website/cta-page.astro';
 ---
-<Layout pageTitle="ZinContent Coming Soon">
+<Layout pageTitle={pageTitle}>
 
 	<section><Hero /></section>
 
