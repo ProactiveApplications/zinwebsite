@@ -1,6 +1,8 @@
 ---
 import '/src/assets/css/spacing.css';
 import '/src/assets/css/public.css';
+import Nav from "./NavLayout.astro";
+import Footer from "./FooterLayout.astro";
 
 const {pageTitle} = Astro.props;
 ---
@@ -19,9 +21,9 @@ const {pageTitle} = Astro.props;
         <link rel="stylesheet" href="../../css/public.css" />
 	</head>
 	<body>
-
+		<Nav />
 			<slot />
-
+		<Footer />
 
 	</body>
 </html>

@@ -1,0 +1,27 @@
+<header class="site-header">
+    <div class="header-container">
+        <a class="header-brand" asp-controller="Home" asp-action="Index">Zin Content</a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation" aria-controls="site-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+
+        <nav class="header-nav" id="site-nav">
+            <ul class="nav-list main-links">
+                <!-- <li class="nav-item"><a class="nav-link" href="/About">About</a></li>  -->
+            </ul>
+
+            <ul class="nav-list auth-links">
+
+                    <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Login">Login</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+</header>
