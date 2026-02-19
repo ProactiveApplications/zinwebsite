@@ -1,0 +1,30 @@
+---
+import '/src/assets/css/spacing.css';
+import '/src/assets/css/public.css';
+import Nav from "./NavLayout.astro";
+import Footer from "./FooterLayout.astro";
+import InnerPageHeader from '../components/website/inner-page-header.astro';
+
+const {pageTitle} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>		
+
+		<!-- Your custom global styles -->
+		<link rel="stylesheet" href="../../css/spacing.css" />
+        <link rel="stylesheet" href="../../css/public.css" />
+	</head>
+	<body>
+		<Nav />
+		<InnerPageHeader pageTitle={pageTitle} />
+			<slot />
+		<Footer />
+	</body>
+</html>
+
