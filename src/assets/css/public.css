@@ -563,16 +563,7 @@ textarea.form-control {
 /* ========================================
    HOME PAGE SPECIFIC
    ======================================== */
-/*.main-layout {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: var(--spacing-xxl) var(--spacing-md);
-}
-*/
+
 .page-header h1 {
     font-size: 4rem;
     font-weight: 700;
