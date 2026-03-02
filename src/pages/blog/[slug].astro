@@ -1,0 +1,36 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+    const allBlogPosts = await getCollection('posts');
+    
+    return allBlogPosts.map((post) => ({
+        params: { slug: post.data.slug },
+        props: { entryId: post.id },
+    }));
+}
+
+const { entryId } = Astro.props;
+const post = await getEntry('posts', entryId);
+
+if (!post) {
+    return Astro.redirect('/404');
+}
+
+import Layout from '../../../layouts/BlogMainLayout.astro';
+import Backlink from '../../../components/website/backlink.astro';
+---
+
+<Layout pageTitle={post.data.title}>
+
+    <Backlink />
+
+    <article>
+        <h1>{post.data.title}</h1>
+        <p>{post.data.description}</p>        
+        <!-- Use rendered.html instead of render() -->
+        <div set:html={post.rendered?.html} />
+    </article>
+
+</Layout>

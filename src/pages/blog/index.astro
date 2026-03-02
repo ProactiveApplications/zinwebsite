@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+const allBlogPosts = await getCollection('posts');
+import Layout from '../../../layouts/BlogMainLayout.astro';
+---
+<Layout pageTitle="Blog">
+    <h1>Posts</h1>    
+
+      {allBlogPosts.map(post => (
+        <div class="card">
+            <div class="card-header">
+                <h3>
+                    <a href={`/blog/${post.data.slug}`}>{post.data.title}</a>
+                </h3>
+            </div>
+            
+            <div class="card-body">
+                <p>{post.data.description}</p>
+            </div>
+            
+            <div class="card-footer text-right">
+                <p class="date">{post.data.date.toLocaleDateString()}</p>
+            </div>
+        </div>
+    ))}
+    
+</Layout>
