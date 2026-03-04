@@ -15,19 +15,15 @@ const {pageTitle} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 		
-
 		<!-- Bootstrap Icons -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
 	</head>
+
 	<body>
 		<Nav />
 			<slot />
 		<Footer />
-
 	</body>
-	<script>
-		import '../src/assets/js/web3form';
-	</script>
+	
 </html>
 

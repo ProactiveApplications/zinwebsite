@@ -182,6 +182,53 @@ a:hover {
     color: var(--color-cta-dark);
 }
 
+
+/* ========================================
+   ALERTS
+   ======================================== */
+.alert {
+    position: relative;
+    padding: var(--spacing-md);
+    padding-right: var(--spacing-xxl); /* Space for close button */
+    margin-bottom: var(--spacing-md);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.alert-danger {
+    background-color: #ffebe9; /* Light red wash */
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+}
+
+.alert-success {
+    background-color: #dafbe1; /* Light green wash */
+    border-color: var(--color-success);
+    color: var(--color-success);
+}
+
+.alert .close-btn {
+    position: absolute;
+    top: 50%;
+    right: var(--spacing-md);
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    color: inherit;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.alert .close-btn:hover {
+    opacity: 1;
+}
+
 /* ========================================
    COLOR CLASSES - BACKGROUND
    ======================================== */

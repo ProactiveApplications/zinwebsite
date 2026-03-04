@@ -1,5 +1,5 @@
 ---
-
+import ContactForm from '../../components/website/ContactForm.astro';
 ---
 <section>
     <div class="container-fluid mb-5">
@@ -28,27 +28,16 @@
                         <p class="txt-orange">
                             We promise to only contact you regarding the ZinApp.
                         </p>
+
+                        
                     </div>  
+
+                    <div class="col-mobile-12 col-12">
+                        <ContactForm />
+                    </div>
             </div>
-            <div class="grid">
-                <div class="col-3"></div>    
-                <div class="col-mobile-12 col-6 text-center">
+            
 
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="c97920dd-c689-45cc-8418-1a94afc74aae">
-
-                        <input type="text" class="form-control mb-2" name="name" placeholder="Name" required>
-
-                        <input type="email" class="form-control mb-2" name="email" placeholder="Email" required>
-                        <textarea name="message" class="form-control mb-2" placeholder="Message"></textarea>
-                        
-                        <button type="submit" class="btn btn-orange mt-2">Click to Send</button>
-                        
-
-                    </form>
-                </div>
-                <div class="col-3"></div>    
-            </div>
 
         </div>
     </div>
