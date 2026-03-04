@@ -4,8 +4,9 @@
 
 <div class="contact-form-container">
   <form id="contactForm" novalidate>
-    <div class="d-none" aria-hidden="true">
-      <input type="text" name="middle_name" tabindex="-1" autocomplete="off" />
+    <div class="hp-wrapper" aria-hidden="true">
+      <label for="middle_name">Middle Name</label>
+      <input type="text" id="middle_name" name="middle_name" tabindex="-1" autocomplete="off" />
     </div>
 
     <div class="form-group mb-3">
@@ -51,88 +52,107 @@
   .contact-form-container {
     max-width: 600px;
     margin: 0 auto;
+    width: 100%;
+  }
+
+  .hp-wrapper {
+    display: none !important;
+    visibility: hidden !important;
   }
 </style>
 
 <script>
+  // Page load time for security
   const formLoadTime = Date.now();
-  const form = document.getElementById('contactForm') as HTMLFormElement;
-  const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
-  const btnText = submitBtn.querySelector('.btn-text') as HTMLSpanElement;
-  const formStatus = document.getElementById('formStatus') as HTMLDivElement;
 
-  // Helper function to create dismissible alerts
-  function showAlert(message, type) {
-    const alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
-    
-    formStatus.innerHTML = `
-      <div class="alert ${alertClass}">
-        <span class="alert-message">${message}</span>
-        <button type="button" class="close-btn" aria-label="Close">&times;</button>
-      </div>
-    `;
+  // We wrap everything in a function to ensure the DOM is scoped correctly
+  const initForm = () => {
+    const form = document.getElementById('contactForm') as HTMLFormElement;
+    if (!form) return;
 
-    // Add listener to the close button
-    formStatus.querySelector('.close-btn').addEventListener('click', () => {
-      formStatus.innerHTML = '';
-    });
-  }
+    const submitBtn = form.querySelector('#submitBtn') as HTMLButtonElement;
+    const btnText = submitBtn?.querySelector('.btn-text') as HTMLSpanElement;
+    const formStatus = form.querySelector('#formStatus') as HTMLDivElement;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    function showAlert(message, type) {
+      const alertClass = type === 'success' ? 'alert-success txt-success' : 'alert-danger txt-danger';
+      formStatus.innerHTML = `
+        <div class="alert ${alertClass}">
+          <span>${message}</span>
+          <button type="button" class="close-btn" aria-label="Close">&times;</button>
+        </div>
+      `;
 
-    const emailInput = document.getElementById('email') as HTMLInputElement;
-    const gdprInput = document.getElementById('gdprConsent') as HTMLInputElement;
-    
-    let errors = [];
-    if (!emailInput.value || !emailInput.checkValidity()) {
-      errors.push("add an email address");
-    }
-    if (!gdprInput.checked) {
-      errors.push("click the checkbox to show you agree with the Privacy Policy");
-    }
-
-    if (errors.length > 0) {
-      // Entire text is inside the alert container, inheriting the danger color
-      const message = `Please ${errors.join(" and ")}.`;
-      showAlert(message, 'error');
-      return;
-    }
-
-    // Process submission...
-    formStatus.innerHTML = '';
-    submitBtn.disabled = true;
-    btnText.textContent = 'Sending...';
-
-    const formData = new FormData(form);
-    const data = {
-      email: formData.get('email'),
-      name: formData.get('name') || '',
-      message: formData.get('message') || '',
-      gdprConsent: formData.get('gdprConsent') === 'on',
-      form_loaded_at: formLoadTime
-    };
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+      formStatus.querySelector('.close-btn')?.addEventListener('click', () => {
+        formStatus.innerHTML = '';
       });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        showAlert('<strong>Success!</strong> Your interest is registered. Please check your email.', 'success');
-        form.reset();
-      } else {
-        throw new Error(result.error || 'Submission failed');
-      }
-    } catch (error) {
-      showAlert(`<strong>Error:</strong> ${error instanceof Error ? error.message : 'Something went wrong.'}`, 'error');
-    } finally {
-      submitBtn.disabled = false;
-      btnText.textContent = 'Register Interest';
     }
-  });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Select inputs specifically from THIS form instance
+      const emailInput = form.querySelector('#email') as HTMLInputElement;
+      const gdprInput = form.querySelector('#gdprConsent') as HTMLInputElement;
+      const hpInput = form.querySelector('#middle_name') as HTMLInputElement;
+      const nameInput = form.querySelector('#name') as HTMLInputElement;
+      const messageInput = form.querySelector('#message') as HTMLTextAreaElement;
+      
+      formStatus.innerHTML = '';
+
+      // 1. Validation Logic with safe checks
+      let errorParts = [];
+      const emailValue = emailInput?.value?.trim() || '';
+      
+      if (!emailValue || !emailInput.checkValidity()) {
+        errorParts.push("add a valid email address");
+      }
+      if (!gdprInput?.checked) {
+        errorParts.push("click the checkbox to show you agree with the Privacy Policy");
+      }
+
+      if (errorParts.length > 0) {
+        showAlert(`Please ${errorParts.join(" and ")}.`, 'danger');
+        return;
+      }
+
+      // 2. Submit State
+      submitBtn.disabled = true;
+      if (btnText) btnText.textContent = 'Sending...';
+
+      // 3. Build Payload safely
+      const payload = {
+        email: emailValue,
+        name: nameInput?.value?.trim() || '',
+        message: messageInput?.value?.trim() || '',
+        gdprConsent: gdprInput.checked,
+        middle_name: hpInput?.value || '',
+        form_loaded_at: formLoadTime
+      };
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+          showAlert('<strong>Success!</strong> Your interest is registered. Please check your email.', 'success');
+          form.reset();
+        } else {
+          const result = await response.json();
+          throw new Error(result.error || 'Submission failed');
+        }
+      } catch (error) {
+        showAlert(`<strong>Error:</strong> ${error instanceof Error ? error.message : 'Something went wrong.'}`, 'danger');
+      } finally {
+        submitBtn.disabled = false;
+        if (btnText) btnText.textContent = 'Register Interest';
+      }
+    });
+  };
+
+  // Initialize on load
+  initForm();
 </script>
