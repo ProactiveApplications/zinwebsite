@@ -1,14 +1,26 @@
 export const prerender = false;
 
-export async function POST({ request }) {
+export async function POST({ request, locals }) {
   try {
-    const PLUNK_API_KEY = import.meta.env.PLUNK_API_KEY;
+    /**
+     * ENVIRONMENT VARIABLE RESOLUTION
+     * 1. locals?.runtime?.env -> Cloudflare Pages (Live)
+     * 2. import.meta.env      -> Astro standard (Local)
+     * 3. process.env          -> Node standard (Fallback)
+     */
+    const PLUNK_API_KEY = 
+      locals?.runtime?.env?.PLUNK_API_KEY || 
+      import.meta.env.PLUNK_API_KEY || 
+      process.env.PLUNK_API_KEY;
 
     if (!PLUNK_API_KEY) {
-      console.error('PLUNK_API_KEY not configured');
-      return new Response(JSON.stringify({ error: 'Server configuration error' }), { 
-        status: 500, 
-        headers: { 'Content-Type': 'application/json' } 
+      console.error('Configuration Error: PLUNK_API_KEY not found.');
+      return new Response(JSON.stringify({ 
+        error: 'Server configuration error',
+        details: 'API Key is missing from the server environment.' 
+      }), { 
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
       });
     }
 
