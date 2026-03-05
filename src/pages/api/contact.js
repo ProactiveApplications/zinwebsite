@@ -8,8 +8,13 @@ export async function POST({ request, locals }) {
      */
     const PLUNK_API_KEY = 
       locals?.runtime?.env?.PLUNK_API_KEY || 
-      import.meta.env.PLUNK_API_KEY || 
-      process.env.PLUNK_API_KEY;
+      import.meta.env.PLUNK_API_KEY || process.env.PLUNK_API_KEY;
+
+    const ADMIN_EMAIL = 
+      locals?.runtime?.env?.ADMIN_EMAIL || 
+      import.meta.env.ADMIN_EMAIL || 
+      process.env.ADMIN_EMAIL || 
+      'info@zincontent.com'; // Fallback if variable is missing
 
     if (!PLUNK_API_KEY) {
       console.error('Configuration Error: PLUNK_API_KEY not found.');
@@ -98,8 +103,9 @@ The Zin App Team`.replace(/\n/g, '<br />');
           to: email,
           subject: 'Thank you for registering your interest in the Zin App',
           body: `<div style="font-family: sans-serif; line-height: 1.6; color: #333;">${userEmailBody}</div>`,
-          from: 'info@zincontent.com',
-          name: 'Zin App'
+          from: ADMIN_EMAIL,
+          name: 'Zin App',
+          subscribed: true
         })
       }),
       fetch('https://next-api.useplunk.com/v1/send', {
@@ -109,7 +115,7 @@ The Zin App Team`.replace(/\n/g, '<br />');
           to: 'info@zincontent.com',
           subject: `New Lead: ${name || email}`,
           body: adminEmailBody,
-          from: 'info@zincontent.com',
+          from: ADMIN_EMAIL,
           name: 'Zin App System'
         })
       })
