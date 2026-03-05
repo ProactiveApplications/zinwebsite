@@ -96,18 +96,30 @@ The Zin App Team`.replace(/\n/g, '<br />');
 
     // 7. Fire both emails simultaneously
     const [userResponse, adminResponse] = await Promise.all([
+      // Send to User & Mark as Subscribed with GDPR Metadata
       fetch('https://next-api.useplunk.com/v1/send', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${PLUNK_API_KEY}` },
+        headers: { 
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${PLUNK_API_KEY}` 
+        },
         body: JSON.stringify({
           to: email,
           subject: 'Thank you for registering your interest in the Zin App',
           body: `<div style="font-family: sans-serif; line-height: 1.6; color: #333;">${userEmailBody}</div>`,
           from: ADMIN_EMAIL,
           name: 'Zin App',
-          subscribed: true
+          subscribed: true,
+          // NEW: Metadata object to store GDPR consent record
+          metadata: {
+            gdpr_consent: gdprConsent ? "Accepted" : "Not Provided",
+            consent_date: submittedAt,
+            source: "Waitlist Form"
+          }
         })
       }),
+
+
       fetch('https://next-api.useplunk.com/v1/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${PLUNK_API_KEY}` },
