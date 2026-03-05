@@ -187,9 +187,6 @@ a:hover {
    ALERTS
    ======================================== */
 
-   /* ========================================
-   DISMISSIBLE ALERTS
-   ======================================== */
 .alert {
     position: relative;
     padding: var(--spacing-md);
