@@ -103,18 +103,17 @@ The Zin App Team`.replace(/\n/g, '<br />');
           'Content-Type': 'application/json', 
           'Authorization': `Bearer ${PLUNK_API_KEY}` 
         },
-        body: JSON.stringify({
+       body: JSON.stringify({
           to: email,
           subject: 'Thank you for registering your interest in the Zin App',
           body: `<div style="font-family: sans-serif; line-height: 1.6; color: #333;">${userEmailBody}</div>`,
-          from: ADMIN_EMAIL,
+          from: 'info@zincontent.com',
           name: 'Zin App',
-          subscribed: true,
-          // NEW: Metadata object to store GDPR consent record
-          metadata: {
+          subscribed: true, // Forces "Subscribed" status in dashboard
+          data: { // This maps to the "Custom Data" fields in Plunk
             gdpr_consent: gdprConsent ? "Accepted" : "Not Provided",
             consent_date: submittedAt,
-            source: "Waitlist Form"
+            registration_source: "Waitlist Form"
           }
         })
       }),
