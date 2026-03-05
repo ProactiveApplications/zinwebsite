@@ -1,0 +1,35 @@
+---
+import '../assets/css/spacing.css';
+import '../assets/css/public.css';
+import Nav from './NavLayout.astro';
+import Footer from './FooterLayout.astro';
+const {pageTitle} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+
+	<body>
+		<Nav />
+		<div class="page-header-section">
+			<div class="container">
+				<div class="page-header-content">
+					<h1 class="page-header-title">{pageTitle}</h1>
+				</div>
+			</div>
+		</div>
+
+		<section class="pl-2 pr-2 pt-2 pb-2">
+			<slot />
+		</section>
+		
+		<Footer />
+	</body>
+</html>
+

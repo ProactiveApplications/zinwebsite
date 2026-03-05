@@ -1,5 +1,5 @@
 /* ========================================
-   PUBLIC.CSS - Minimalist Styles
+   PUBLIC.CSS
    ======================================== */
 
 /* ========================================
@@ -9,6 +9,7 @@
     /* Font Stack - Easy to change in one place */
     --font-family: Roboto, sans-serif;
     --font-headings: Manrope, sans-serif;
+
     /* GitHub Primer Colors */
     --color-primary: #0969da; /* Blue 5 */
     --color-secondary: #6e7781; /* Gray 6 */
@@ -21,6 +22,7 @@
     --color-yellow: #ffe66d;
     --color-teal: #1a535c; /*#EBF9F8*/
     --color-light-teal: #EBF9F8;
+    --color-medium-teal: #c0ece9;
     --color-dark-teal: #24737F;
     --color-cta-dark: #1A535C;
     --color-white: #ffffff;
@@ -38,6 +40,8 @@
     /* Breakpoints */
     --breakpoint-tablet: 768px;
     --breakpoint-desktop: 1024px;
+    /* Text  */
+    --base-text-weight-light: 300;
 }
 
 /* ========================================
@@ -57,7 +61,7 @@ html {
 body {
     font-family: var(--font-family);
     font-size: 20px;
-    color: #181716;
+    /* color: #181716; */
     /* color: var(--color-dark); */
     background-color: #ffffff;
 }
@@ -106,13 +110,12 @@ p {
 
 a {
     color: var(--color-primary);
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 a:hover {
     text-decoration: underline;
 }
-
 
 /* Border */
 .border-default {
@@ -128,7 +131,6 @@ a:hover {
 .shadow-medium {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-
 
 
 /* ========================================
@@ -182,6 +184,31 @@ a:hover {
     color: var(--color-cta-dark);
 }
 
+.txt-muted {
+    color: var(--base-text-weight-light);
+}
+
+txt-small {
+    font-size: 10.175rem;
+}
+
+/* Force everything inside txt-dark to use the parent color */
+.txt-dark, 
+.txt-dark p, 
+.txt-dark a, 
+.txt-dark i {
+    color: #333; /* Or your specific dark hex code */
+}
+
+/* Ensure links stay dark even after being clicked */
+.txt-dark a:visited {
+    color: inherit;
+}
+
+.txt-dark a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
 
 /* ========================================
    ALERTS
@@ -285,6 +312,11 @@ a:hover {
 .bg-light-teal {
     background-color: var(--color-light-teal);
 }
+
+.bg-medium-teal {
+    background-color: var(--color-medium-teal);
+}
+
 
 
 /* ========================================
@@ -491,69 +523,6 @@ details p {
 }
 
 /* ========================================
-   FLEXBOX UTILITIES
-   ======================================== */
-.flex-row {
-    flex-direction: row;
-}
-
-.flex-column {
-    flex-direction: column;
-}
-
-.flex-wrap {
-    flex-wrap: wrap;
-}
-
-.justify-start {
-    justify-content: flex-start;
-}
-
-.justify-center {
-    justify-content: center;
-}
-
-.justify-end {
-    justify-content: flex-end;
-}
-
-.justify-between {
-    justify-content: space-between;
-}
-
-.align-start {
-    align-items: flex-start;
-}
-
-.align-center {
-    align-items: center;
-}
-
-.align-end {
-    align-items: flex-end;
-}
-
-.gap-1 {
-    gap: var(--spacing-xs);
-}
-
-.gap-2 {
-    gap: var(--spacing-sm);
-}
-
-.gap-3 {
-    gap: var(--spacing-md);
-}
-
-.gap-4 {
-    gap: var(--spacing-lg);
-}
-
-.gap-5 {
-    gap: var(--spacing-xl);
-}
-
-/* ========================================
    CARDS
    ======================================== */
 .card {
@@ -643,6 +612,102 @@ textarea.form-control {
     }
 }
 
+
+/* ========================================
+   BLOG LIST CUSTOMIZATIONS
+   ======================================== */
+
+/* 1. Ensure fonts match your site theme */
+.blog-post-title, 
+.blog-post-description {
+    font-family: var(--font-family);
+}
+
+/* 2. Style title as a link without decoration */
+.blog-post-link {
+    color: var(--color-dark); /* Removes the blue link color */
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.blog-post-link:hover {
+    color: var(--color-primary); /* Subtle color change on hover */
+    text-decoration: none;
+}
+
+/* 3. "Read More" right-aligned link */
+.blog-read-more {
+    display: block;
+    text-align: right;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-top: var(--spacing-sm);
+}
+
+.blog-read-more:hover {
+    text-decoration: underline;
+}
+
+/* Divider between blog posts */
+.post-row {
+    border-bottom: 1px solid #d0d7de;
+    padding-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Optional: Remove the border from the very last post so it doesn't look like a footer */
+.post-row:last-child {
+    border-bottom: none;
+}
+
+/* Footer area for post row */
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-sm);
+}
+
+/* Ensure the date text matches the read more size */
+.post-date {
+    font-size: 0.875rem;
+    color: var(--color-secondary);
+}
+
+
+/* Legal row styling */
+.legal-row {
+    border-bottom: 1px solid #d0d7de;
+    padding: var(--spacing-md) 0;
+}
+
+/* Remove border from the last item */
+/* .legal-row:last-child {
+    border-bottom: none;
+} */
+
+/* Make the link behave like a title */
+.legal-link {
+    font-family: var(--font-headings);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--color-dark);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legal-link:hover {
+    color: var(--color-primary);
+}
+
 /* ========================================
    SITE HEADER
    ======================================== */
@@ -688,14 +753,14 @@ textarea.form-control {
     padding: var(--spacing-sm);
 }
 
-    .hamburger span {
-        width: 25px;
-        height: 3px;
-        background-color: var(--color-dark);
-        margin: 3px 0;
-        transition: 0.3s;
-        border-radius: 3px;
-    }
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-dark);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 3px;
+}
 
 /* Navigation */
 .header-nav {
@@ -730,99 +795,84 @@ textarea.form-control {
     text-decoration: none;
 }
 
+
 /* Mobile Navigation */
 @media (max-width: 767px) {
+    
     .hamburger {
         display: flex;
     }
-
+    
+    /* Mobile menu panel */
     .header-nav {
         position: fixed;
         top: 60px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 60px);
-        background-color: #ffffff;
+        height: calc(100vh - 75px);
+        background-color: #333;
+        
+        /* FIX: Ensure content starts from the top, not centered vertically */
+        display: flex;
         flex-direction: column;
-        padding: var(--spacing-xl);
+        justify-content: flex-start; 
+        
+        /* FIX: Add padding to the TOP so "Home" isn't hitting the header */
+        padding-top: 20px; 
+        
         transition: left 0.3s ease;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
     }
-
+    
     .menu-toggle:checked ~ .header-nav {
         left: 0;
     }
-
+    
+    /* Navigation list container */
     .nav-list {
+        display: flex;
         flex-direction: column;
+        
+        /* FIX: Reset any desktop alignment that might be centering items */
+        align-items: flex-start; 
+        
+        padding: 0;
+        margin: 0;
+        list-style: none;
         width: 100%;
     }
+    
+    .nav-item {
+        width: 100%;
+        /* Adds a very subtle line between menu items */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
 
+    
+    /* Navigation links - clickable area */
     .nav-link {
         display: block;
-        padding: var(--spacing-md);
+        
+        /* 1. Use a smaller top/bottom padding to tighten the gap */
+        /* 0.6rem is for top/bottom, 2rem is for left margin */
+        padding: 0.6rem 2rem; 
+
+        /* 2. Set a specific line-height to prevent text from floating */
+        line-height: 1.2; 
+
+        color: #fff;
+        text-decoration: none;
+        text-align: left;
+    }
+
+    .nav-link:hover {
+        color: #ddd;
+        background-color: rgba(255, 255, 255, 0.1);
     }
 }
 
-/* ========================================
-   SITE FOOTER
-   ======================================== */
 
-
-/* Form Controls in Footer */
-/*.FormControl {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-}
-
-.FormControl-label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-dark);
-}
-
-.Select {
-    position: relative;
-    display: inline-block;
-}
-
-.Select--small {
-    font-size: 0.875rem;
-}*/
-/*
-.Select-select {
-    padding: var(--spacing-xs) var(--spacing-md);
-    border: 1px solid #d0d7de;
-    border-radius: var(--radius-sm);
-    background-color: #ffffff;
-    color: var(--color-dark);
-    font-family: var(--font-family);
-    cursor: pointer;
-    appearance: none;
-    padding-right: var(--spacing-xl);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236e7781' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right var(--spacing-sm) center;
-}
-
-.Select-select:focus {
-    outline: none;
-    border-color: var(--color-primary);
-}*/
-
-/* Responsive Footer */
-/*@media (max-width: 767px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-        text-align: center;
-    }
-
-    .footer-col--right {
-        align-items: center;
-    }
-}*/
 
 /* ========================================
    SECTION STYLES
@@ -832,7 +882,7 @@ textarea.form-control {
 .page-header-section {
     padding: var(--spacing-xxl) 0;
     text-align: center;
-    background-color: var(--color-dark-teal);
+    background-color: var(--color-medium-teal);
     border-bottom: 1px solid #d0d7de;
 }
 
@@ -845,7 +895,7 @@ textarea.form-control {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: var(--spacing-md);
-    color: var(--color-light);
+    color: var(--color-dark);
 }
 
 .page-header-subtitle {
@@ -1024,68 +1074,6 @@ textarea.form-control {
     line-height: 1.6;
 }
 
-/* Grid Section */
-/*.grid-section {
-    padding: var(--spacing-xxl) 0;
-}
-
-.grid-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-dark);
-}
-
-.grid-subtitle {
-    font-size: 1.125rem;
-    color: var(--color-secondary);
-    margin-bottom: var(--spacing-xxl);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}*/
-/*
-.grid-item {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.grid-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}*/
-/*
-.grid-item-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
-}
-
-.grid-item-content {
-    padding: var(--spacing-lg);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}*/
-/*
-.grid-item-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-dark);
-}
-
-.grid-item-description {
-    font-size: 0.875rem;
-    color: var(--color-secondary);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-md);
-    flex: 1;
-}*/
-
 /* CTA Section */
 .cta-section {
     padding: var(--spacing-xxl) 0;
@@ -1170,19 +1158,17 @@ textarea.form-control {
     place-items: center; /* centres both axes */
 }
 
-    .img-vcenter-grid > img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-    }
+.img-vcenter-grid > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
 
 /* ========================================
    RESPONSIVE ADJUSTMENTS FOR SECTIONS
    ======================================== */
 @media (max-width: 767px) {
-
-
 
     .page-header-title {
         font-size: 2rem;

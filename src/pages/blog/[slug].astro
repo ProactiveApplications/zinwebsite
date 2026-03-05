@@ -18,8 +18,8 @@ if (!post) {
     return Astro.redirect('/404');
 }
 
-import Layout from '../../../layouts/BlogMainLayout.astro';
-import Backlink from '../../../components/website/backlink.astro';
+import Layout from '../../layouts/InnerPageLayout.astro';
+import Backlink from '../../components/website/backlink.astro';
 ---
 
 <Layout pageTitle={post.data.title}>

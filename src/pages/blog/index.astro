@@ -1,27 +1,38 @@
 ---
 import { getCollection } from 'astro:content';
 const allBlogPosts = await getCollection('posts');
-import Layout from '../../../layouts/BlogMainLayout.astro';
+import Layout from '../../layouts/InnerPageLayout.astro';
 ---
 <Layout pageTitle="Blog">
-    <h1>Posts</h1>    
+    
+    <div class="grid mt-4 mb-4 pt-4 pb-4 pr-2 pl-2">
 
-      {allBlogPosts.map(post => (
-        <div class="card">
-            <div class="card-header">
-                <h3>
-                    <a href={`/blog/${post.data.slug}`}>{post.data.title}</a>
-                </h3>
-            </div>
+        <div class="col-mobile-12 col-3"></div>
+
+        <div class="col-mobile-12 col-6">
+            {allBlogPosts.map(post => (
+    <article class="post-row">
+        {/* Title now stands alone at the top */}
+        <a class="blog-post-link" href={`/blog/${post.data.slug}`}>
+            {post.data.title}
+        </a>
+        
+        {/* Description */}
+        <p class="blog-post-description">{post.data.description}</p>
+        
+        {/* New Footer Container */}
+        <div class="post-footer">
+            <span class="post-date">
+                Published on: {post.data.date.toLocaleDateString()}
+            </span>
             
-            <div class="card-body">
-                <p>{post.data.description}</p>
-            </div>
-            
-            <div class="card-footer text-right">
-                <p class="date">{post.data.date.toLocaleDateString()}</p>
-            </div>
+            <a class="blog-read-more" href={`/blog/${post.data.slug}`}>
+                Read more &rarr;
+            </a>
         </div>
-    ))}
+    </article>
+))}
+        </div>
+    </div>
     
 </Layout>

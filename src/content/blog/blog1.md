@@ -1,6 +1,6 @@
 ---
 title: "Hello world"
-description: "Descripion of post one"
+description: "AI generated websites may be convenient but they are lacking in depth. Descripion of post one."
 slug: "first-blog-one"
 date: 2026-03-02
 ---
