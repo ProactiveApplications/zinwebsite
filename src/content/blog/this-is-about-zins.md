@@ -3,6 +3,7 @@ title: "About the Zin"
 description: "the Zin is the immutable piece of content"
 slug: "the-third-blog-post"
 date: 2026-03-02
+draft: true
 ---
 
 In an era of generic artificial intelligence, the ZinApp ecosystem provides a specialized solution for maintaining human authenticity and originality. 

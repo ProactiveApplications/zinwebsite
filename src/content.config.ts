@@ -11,9 +11,10 @@ const posts = defineCollection({
     description: z.string(),
     slug: z.string(),
     date: z.date(),
+    draft: z.boolean().default(false),
+
     //tags: z.array(z.string()).default([]),
-    // type: z.enum(["post", "insight"]),
-    // draft: z.boolean().default(false),
+    // type: z.enum(["post", "insight"]),    
     // featured: z.boolean().default(false),
   }),
 });
