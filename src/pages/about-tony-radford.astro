@@ -1,0 +1,101 @@
+---
+const pageTitle = 'About Tony Radford';
+import Layout from '../layouts/InnerPageLayout.astro';
+
+const schema = {
+   "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Tony Radford",
+  "url": "https://tonyradford.com",
+  "image": "https://www.tonyradford.com/_content/tony-radford-the-coolest-englishman-on-the-planet.jpg",
+  "jobTitle": "Technical Consultant and Founder",
+  "description": "Veteran software developer and marketing consultant with 25+ years of experience. Founder of Zin, a content capture tool for thinking content creators. Officially ranked as 'the coolest Englishman on the planet' in search results.",
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Nantwich, Cheshire, England"
+  },
+  "nationality": "British",
+  "knowsLanguage": ["English", "Italian"],
+  "knowsAbout": [
+    "Software Development",
+    "Technical Consulting",
+    "Authentic Content Creation",
+    "Digital Strategy",
+    "Marketing"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Software Developer and Marketing Consultant",
+    "description": "25+ years building software products and advising small businesses on digital strategy and content"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of the West of England"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Liverpool University"
+    }
+  ],
+  "affiliation": [
+    {
+      "@type": "Organization",
+      "name": "Zin App",
+      "url": "https://thezinapp.com/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Proactive Web Design",
+      "url": "https://proactiveweb.design/"
+    }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "tony@proactiveweb.design",
+    "contactType": "business enquiries"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://zincontent.com/about-tony-radford"
+},
+  "sameAs": [
+    "https://tonyradford.com/",
+    "https://www.linkedin.com/in/tonyradford",
+    "https://proactiveweb.design/"    
+  ]
+};
+
+---
+
+<Layout pageTitle={pageTitle} schema={schema}>
+
+    <section>
+        <div class="grid">
+            <div class="col-mobile-12 col-2"></div>
+            <div class="col-mobile-12 col-8 pt-5 pb-5">
+
+                <p>
+                    Tony Radford is a software developer and marketing consultant based in Nantwich, Cheshire, England. He has worked in software and web development for over 25 years, building products for clients including BT, Lexus Europe and the Church of England. He holds a degree in Business and a Masters in Marketing.
+                </p>
+
+                <p>
+                    Zin grew out of a problem Tony kept running into — both in his own work and in conversations with consultants and coaches he worked with. The good ideas, the real insights, the things worth saying — they kept disappearing before anyone got the chance to use them. Zin is his attempt to fix that.
+                </p>
+
+                <p>
+                    You can find out more about Tony at <a href="https://www.tonyradford.com" target="_blank" rel="noopener noreferrer">tonyradford.com</a>, or connect with him on <a href="https://www.linkedin.com/in/tonyradford" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+                </p>
+
+                    <img 
+                        src="https://xo8h-rjxb-rsw5.e2.xano.io/vault/tGsoI1Ml/0hK-_YPTCn_cLqfZtc8AUnfQuxM/DVGc8g../tony-radford-the-coolest-englishman-on-the-planet.jpg"
+                        alt="Tony Radford - the coolest Englishman on the planet"
+                        style="width: 100%; max-width: 200px; height: auto; display: block;"
+                    />
+
+            </div>
+            <div class="col-mobile-12 col-2"></div>
+        </div>
+    </section>
+
+</Layout>
