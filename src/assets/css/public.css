@@ -110,7 +110,7 @@ p {
 
 a {
     color: var(--color-primary);
-    /* text-decoration: none; */
+    text-decoration: none; 
 }
 
 a:hover {
@@ -185,11 +185,15 @@ a:hover {
 }
 
 .txt-muted {
-    color: var(--base-text-weight-light);
+    font-weight: 200;
 }
 
-txt-small {
-    font-size: 10.175rem;
+.txt-small {
+    font-size: 0.9rem;
+}
+
+.txt-emphasis {
+    font-style: italic;
 }
 
 /* Force everything inside txt-dark to use the parent color */
@@ -301,10 +305,6 @@ txt-small {
     background-color: var(--color-success);
 }
 
-.bg-cta-row {
-    background-color: var(--color-cta-dark);
-}
-
 .bg-teal {
     background-color: var(--color-teal);
 }
@@ -316,7 +316,6 @@ txt-small {
 .bg-medium-teal {
     background-color: var(--color-medium-teal);
 }
-
 
 
 /* ========================================
@@ -348,9 +347,11 @@ txt-small {
 }
 
 .btn-yellow {
-    background-color: var(--color-yellow);
-    color: #000000;
-    border-color: var(--color-yellow);
+    background-color:#9b2244;
+    /* background-color: var(--color-yellow); */
+    color: #ffffff;
+    border-color: #6C4B5E;
+    /* border-color: var(--color-yellow); */
 }
 
 .btn-primary {
@@ -1120,9 +1121,9 @@ textarea.form-control {
     border-color: white;
 }
 
-    .cta-section .btn-primary:hover {
-        background-color: rgba(255, 255, 255, 0.9);
-    }
+.cta-section .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
 
 /* ========================================
    IMAGES
