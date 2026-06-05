@@ -1,16 +1,36 @@
-<header class="site-header">
-    <div class="header-container">
-        <a class="header-brand" href="/">Zin Content</a>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation" aria-controls="site-nav">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <nav class="header-nav" id="site-nav">
-            <ul class="nav-list main-links">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li> 
+<header class="zin-nav navbar navbar-expand-lg">
+    <div class="container-fluid px-4">
+
+        <a class="zin-logo navbar-brand" href="/">Z<span>i</span>n</a>
+
+        <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#zinNavMenu"
+            aria-controls="zinNavMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="zinNavMenu">
+            <ul class="navbar-nav align-items-lg-center gap-lg-3 py-3 py-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link zin-nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link zin-nav-link" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link zin-nav-link" href="/about-tony-radford">About</a>
+                </li>
+                <li class="nav-item ms-lg-2">
+                    <a class="btn-zin btn-zin-sm" href="https://thezinapp.com/register/">Try free for 14 days</a>
+                </li>
             </ul>
-        </nav>
+        </div>
+
     </div>
 </header>

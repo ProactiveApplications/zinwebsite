@@ -1,52 +1,56 @@
 ---
-import CtaBtn from '../website/cta-btn.astro';
+import placeholderImg from '../../../src/assets/img/placeholder.webp';
 ---
-<section id="hero">
-    <div class="container-fluid bg-gradient-primary pt-5 pb-5 bg-light-teal">
-        <div class="container pt-2 pb-5 border-default rounded-2 shadow-medium bg-light">
 
-            <div class="grid">
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="sec sec-white" id="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
 
-                <div class="col-mobile-12 col-12 pl-2 pt-4 text-center">
-                    <p>
-                        <i class="bi bi-star-fill txt-orange mr-2"></i> 
-                        For consultants, coaches and experts building their reputation on LinkedIn
-                        <i class="bi bi-star-fill txt-orange ml-2"></i> 
-                    </p>
-                    <h1>The LinkedIn Algorithm Change Is Burying AI Content. Is Yours Next?</h1>
-
-                </div>
-            </div>
-
-            <div class="grid">
-                <div class="col-mobile-12 col-6 pb-0 pl-2">                
-                
-                    <p>
-                        Zin helps you create LinkedIn content rooted in your real expertise and lived experience. This is the kind of content that LinkedIn loves.
-                    </p>
-                    <ul class="no-bullets">
-                        <li class="mb-3"><i class="bi bi-check-lg txt-orange mr-2"></i>
-                            Capture your best thinking before it disappears
-                        </li>
-                        <li class="mb-3"><i class="bi bi-check-lg txt-orange mr-2"></i>
-                            Build a library of your own ideas, stories and insights
-                        </li>
-                        <li class="mb-3"><i class="bi bi-check-lg txt-orange mr-2"></i>
-                            Generate authentic content that sounds like you, not like everyone else's AI
-                        </li>
-                    </ul>
-
-                    <CtaBtn subtext="The 360Brew algorithm update rewards authentic, niche-specific human voices. Zin is built for exactly that." />
-                    
-                </div>
-
-                <div class="col-mobile-12 col-6 img-vcenter-grid">
-                    <img src="https://xo8h-rjxb-rsw5.e2.xano.io/vault/tGsoI1Ml/i0LLIKu7MYJhtu9to72_x75CxJo/U6sC0w../brooke-cagle-JBwcenOuRCg-unsplash-lg.webp"
-                    class="img-responsive-rounded img-fill" alt="Hero Image woman smiling and working on laptop"
-                    />
-                </div>
-            </div>
-            
+        <div class="col-lg-6">
+          <span class="zin-eyebrow">Ever lost a great idea before you could use it?</span>
+          <h1 class="zin-h1 zin-h1-hero mb-3">Your best ideas disappear before you can <em>use</em> them.</h1>
+          <p class="zin-body mb-4">Zin captures your thinking, builds it into a searchable library, and gives AI something real to work with.</p>
+          <ul class="zin-bullets">
+            <li>
+              <span class="zin-tick">
+                <svg viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                  <path d="M2 5l2 2 4-4" stroke="#fd7e15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Capture a thought in seconds, wherever you are
+            </li>
+            <li>
+              <span class="zin-tick">
+                <svg viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                  <path d="M2 5l2 2 4-4" stroke="#fd7e15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Build a private library from your past and present thinking
+            </li>
+            <li>
+              <span class="zin-tick">
+                <svg viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                  <path d="M2 5l2 2 4-4" stroke="#fd7e15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Create content that sounds like you — not like everyone else's AI
+            </li>
+          </ul>
+          <a href="https://thezinapp.com/register/" class="btn-zin">Try Zin free for 14 days</a>
+          <span class="zin-muted-text d-block mt-2">No commitment. Cancel anytime.</span>
         </div>
+
+        <div class="col-lg-6 mockup-wrap">
+          <img
+            src={placeholderImg.src}
+            alt="Zin app interface showing captured thoughts"
+            class="mockup-img"
+          />
+        </div>
+
+      </div>
     </div>
-</section>
+  </section>

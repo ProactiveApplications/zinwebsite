@@ -2,20 +2,25 @@
 const pageTitle = 'Home';
 import Layout from '../layouts/MainLayout.astro';
 import Hero from '../components/homepage/01_hero.astro';
-import Problem from '../components/homepage/02_problem.astro';
-import Solution from '../components/homepage/05_solution.astro';
-import Features from '../components/homepage/10_features.astro';
-import CTARow from '../components/website/cta-row.astro';
-import FAQs from '../components/homepage/15_faqs.astro';
-import NegSection from '../components/homepage/20_negsection.astro';
-import Pricing from '../components/website/pricing.astro';
-import BackToTop from '../components/website/back-to-top.astro';
+import Problem from '../components/homepage/05_problem.astro';
+import Solution from '../components/homepage/10_solution.astro';
+import HowItWorks from '../components/homepage/15_how_it_works.astro';
+import Audience from '../components/homepage/20_audience.astro';
+import FAQs from '../components/homepage/25_faqs.astro';
+import NegSection from '../components/homepage/30_negsection.astro';
+import Pricing from '../components/homepage/35_pricing.astro';
+// import Features from '../components/homepage/10_features.astro';
+// import CTARow from '../components/website/cta-row.astro';
+
+// import BackToTop from '../components/website/back-to-top.astro';
 // import CTAPage from '../components/website/cta-page.astro';
 ---
 <Layout pageTitle={pageTitle}>
 
-	<section><Hero /></section>
-
+	<section>
+		<Hero />
+	</section>
+ 
 	<section>
 		<Problem />
 	</section>
@@ -23,15 +28,19 @@ import BackToTop from '../components/website/back-to-top.astro';
 	<section>
 		<Solution />
 	</section>
+	
+	<section>
+		<HowItWorks />
+	</section>
 
 	<section>
-		<Features />
+		<Audience />
 	</section>
 
 	<section>
 		<FAQs />
 	</section>
-
+	
 	<section>
 		<NegSection />
 	</section>
@@ -40,9 +49,19 @@ import BackToTop from '../components/website/back-to-top.astro';
 		<Pricing />
 	</section>
 
+<!--
+	<section>
+		<Features />
+	</section>
+
+
+	<section>
+		<Pricing />
+	</section>
+
 	<section>
 		<BackToTop />
 	</section>
-
+ -->
 
 </Layout>

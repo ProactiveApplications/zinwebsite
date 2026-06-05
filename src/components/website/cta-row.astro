@@ -1,17 +1,19 @@
 ---
+// cta-row.astro
 import CtaBtn from '../website/cta-btn.astro';
+
+const { 
+    heading = "The perfect time to start is now.",
+    subtext = "No commitment. Cancel anytime."
+} = Astro.props;
 ---
-<section>
-    <div class="grid bg-teal pt-4 pb-4 pl-4 pr-4 text-center txt-white">
-
-        <div class="col-mobile-12 col-12">
-
-            <p style="font-size: 1.5rem;">
-                The perfect time to start creating authentic, high-quality content is now.
-            </p>
-
-            <CtaBtn />
-
+<section class="sec sec-dark">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 text-center">
+                <p class="zin-body-white mb-4">{heading}</p>
+                <CtaBtn subtext={subtext} />
+            </div>
         </div>
     </div>
 </section>
