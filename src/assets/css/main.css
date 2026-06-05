@@ -211,11 +211,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--zin-orange);
 }
 
-/* Hero headline — one-off size lift for the homepage h1 only */
-.zin-h1-hero {
-  font-size: calc(var(--text-h1) * 1.25);
-}
-
 .zin-h2 {
   font-size: var(--text-h2);
   font-weight: 400;
@@ -353,21 +348,94 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* ============================================================
-   HERO — APP MOCKUP IMAGE
+   HERO — FULL BLEED BACKGROUND IMAGE
 ============================================================ */
-.mockup-wrap {
+
+/* Hero headline size — one-off lift for homepage only */
+.zin-h1-hero {
+  font-size: calc(var(--text-h1) * 2.25);
+  line-height: 1.05;
+}
+
+.hero-fullbleed {
+  position: relative;
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.mockup-img {
+/* Dark overlay — preserves image warmth while making text legible */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+}
+
+/* Content sits above the overlay */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 88vh;
+}
+
+/* Text block — full width of container, centred */
+.hero-text {
   width: 100%;
-  max-width: 420px;
-  border-radius: 14px;
-  transform: rotate(1.5deg);
-  box-shadow: 0 8px 40px rgba(26, 26, 46, 0.12);
-  display: block;
+  text-align: center;
+}
+
+/* Hero headline colour override — white on image */
+.hero-fullbleed .zin-h1 {
+  color: var(--zin-white);
+}
+
+.hero-fullbleed .zin-h1 em {
+  color: var(--zin-orange);
+}
+
+/* Eyebrow on dark background */
+.zin-eyebrow-light {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Sub-copy on image */
+.hero-sub-copy {
+  font-family: var(--font-body);
+  font-size: calc(var(--text-body) * 1.5);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: var(--lh-body);
+}
+
+/* Micro-copy below CTA */
+.hero-micro {
+  font-family: var(--font-body);
+  font-size: var(--text-muted);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile — no background image, use dark background instead */
+@media (max-width: 767px) {
+  .hero-fullbleed {
+    background-image: none !important;
+    background-color: var(--zin-dark);
+  }
+
+  .hero-overlay {
+    display: none;
+  }
+
+  .hero-content {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    min-height: auto;
+  }
 }
 
 
