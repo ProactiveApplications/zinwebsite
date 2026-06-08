@@ -35,7 +35,7 @@
   --text-h2:           2.2rem;
   --text-h3:           1.76rem;
   --text-h4:           1.32rem;
-  --text-body:         1.2rem;
+  --text-body:         1.1rem;
   --text-body-sm:      1rem;
   --text-eyebrow:      0.75rem;
   --text-kicker:       1rem;
@@ -55,6 +55,10 @@
 
 
 /* --- BASE --- */
+html {
+  font-size: 16px; /* Explicit root size — ensures rem consistency across all browsers */
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--zin-off-white);
@@ -256,7 +260,7 @@ h1, h2, h3, h4, h5, h6 {
 .zin-muted-text {
   font-family: var(--font-body);
   color: var(--zin-muted);
-  font-size: var(--text-muted);
+  font-size: 1rem;
 }
 
 .zin-kicker {
@@ -269,6 +273,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .zin-kicker em {
+  font-style: normal;
+  color: var(--zin-orange);
+}
+
+/* Kicker variant for light backgrounds */
+.zin-kicker-dark {
+  font-size: var(--text-kicker);
+  font-weight: 600;
+  color: var(--zin-dark);
+  border-top: 1px solid var(--zin-border);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.zin-kicker-dark em {
   font-style: normal;
   color: var(--zin-orange);
 }
@@ -309,6 +328,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--zin-orange-tint);
 }
 
+.sec-canvas {
+  background-color: var(--zin-off-white);
+}
+
 
 /* ============================================================
    HERO — BULLET LIST
@@ -317,6 +340,14 @@ h1, h2, h3, h4, h5, h6 {
   list-style: none;
   padding: 0;
   margin: 0 0 1.75rem;
+}
+
+/* Centred variant — centres the list block within its container */
+.zin-bullets-center {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .zin-bullets li {
@@ -353,7 +384,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero headline size — one-off lift for homepage only */
 .zin-h1-hero {
-  font-size: calc(var(--text-h1) * 2.25);
+  font-size: 5rem;
   line-height: 1.05;
 }
 
@@ -403,24 +434,21 @@ h1, h2, h3, h4, h5, h6 {
 /* Eyebrow on dark background */
 .zin-eyebrow-light {
   color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
 }
 
 /* Sub-copy on image */
 .hero-sub-copy {
   font-family: var(--font-body);
-  font-size: calc(var(--text-body) * 1.5);
+  font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.88);
   line-height: var(--lh-body);
 }
 
-/* Micro-copy below CTA */
-.hero-micro {
-  font-family: var(--font-body);
-  font-size: var(--text-muted);
+/* Muted text on hero image — override to readable white */
+.hero-fullbleed .zin-muted-text {
   color: rgba(255, 255, 255, 0.6);
 }
-
-/* Mobile — no background image, use dark background instead */
 @media (max-width: 767px) {
   .hero-fullbleed {
     background-image: none !important;
@@ -436,66 +464,41 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 3.5rem;
     min-height: auto;
   }
+
+  .zin-h1-hero {
+    font-size: 2.5rem;
+    line-height: 1.15;
+  }
+
+  .hero-sub-copy {
+    font-size: 1.1rem;
+  }
+
+  .zin-eyebrow-light {
+    font-size: 0.75rem;
+  }
+
+  .hero-micro {
+    font-size: 0.875rem;
+  }
 }
 
 
 /* ============================================================
-   SOLUTION DIAGRAM
+   SOLUTION — IMAGE
 ============================================================ */
-.sol-diagram {
-  max-width: 340px;
-  margin: 0 auto;
-}
-
-.sol-src {
-  background-color: var(--zin-white);
-  border: 0.5px solid var(--zin-border);
-  border-radius: 8px;
-  padding: 0.6rem 0.875rem;
-  font-size: 0.8rem;
-  color: #3d3d4e;
-  font-weight: 500;
-  text-align: center;
-  flex: 1;
-}
-
-.sol-src small {
+.solution-img {
+  width: 100%;
+  height: auto;
   display: block;
-  font-size: 0.68rem;
-  color: var(--zin-muted);
-  font-weight: 400;
-  margin-top: 2px;
+  border-radius: 12px;
 }
 
-.sol-dest {
-  background-color: var(--zin-dark);
-  border-radius: 8px;
-  padding: 0.7rem 0.875rem;
-  font-size: 0.8rem;
-  color: var(--zin-white);
-  font-weight: 600;
-  text-align: center;
-  min-width: 95px;
-}
-
-.sol-dest small {
-  display: block;
-  font-size: 0.68rem;
-  color: #9090b0;
-  font-weight: 400;
-  margin-top: 2px;
-}
-
-.sol-arrow {
-  color: var(--zin-orange);
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.sol-connector {
-  width: 1px;
-  height: 20px;
-  background-color: var(--zin-border);
+@media (max-width: 991px) {
+  .solution-img {
+    max-width: 520px;
+    margin: 0 auto;
+  }
 }
 
 
@@ -590,30 +593,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ============================================================
-   NEG SECTION
-============================================================ */
-.neg-h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 1.75rem);
-  font-weight: 700;
-  color: var(--zin-dark);
-  letter-spacing: -0.025em;
-  line-height: 1.2;
-}
-
-.neg-body {
-  color: #6b4a1a;
-  font-size: 0.9375rem;
-  line-height: 1.7;
-}
-
-.neg-micro {
-  color: #9b6b2a;
-  font-size: 0.8rem;
-  display: block;
-  margin-top: 0.5rem;
-}
 
 
 /* ============================================================
@@ -686,6 +665,92 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   text-align: center;
   margin-top: 0.75rem;
+}
+
+
+/* ============================================================
+   DETAILS / CANCELLATION POLICY
+============================================================ */
+.zin-details {
+  border: 0.5px solid var(--zin-border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  background-color: var(--zin-white);
+  text-align: left;
+}
+
+.zin-details-summary {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--zin-dark);
+  cursor: pointer;
+  padding: 0.5rem 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.zin-details-summary::-webkit-details-marker {
+  display: none;
+}
+
+.zin-details-summary::after {
+  content: '▾';
+  color: var(--zin-orange);
+  font-size: 0.9rem;
+  margin-left: auto;
+}
+
+details[open] .zin-details-summary::after {
+  content: '▴';
+}
+
+.zin-details-body {
+  padding-top: 1rem;
+  border-top: 0.5px solid var(--zin-border);
+  margin-top: 0.75rem;
+}
+
+
+/* ============================================================
+   LEGAL PAGES — LINK LIST
+============================================================ */
+.zin-legal-list {
+  border-top: 0.5px solid var(--zin-border);
+}
+
+.zin-legal-item {
+  border-bottom: 0.5px solid var(--zin-border);
+}
+
+.zin-legal-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--zin-dark);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.zin-legal-link:hover {
+  color: var(--zin-orange);
+}
+
+.zin-legal-link i {
+  font-size: 1rem;
+  color: var(--zin-muted);
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.zin-legal-link:hover i {
+  transform: translateX(4px);
+  color: var(--zin-orange);
 }
 
 
@@ -822,4 +887,79 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     margin-top: 0.5rem;
   }
+}
+
+
+/* ============================================================
+   TABLET & DESKTOP FONT SCALE OVERRIDES
+   Mobile sizes defined in base classes above.
+   These kick in at 768px and above.
+============================================================ */
+@media (min-width: 768px) {
+
+  .zin-eyebrow {
+    font-size: 1rem;
+  }
+
+  .zin-h2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+  }
+
+  .zin-h3 {
+    font-size: 1.75rem;
+  }
+
+  .zin-body,
+  .zin-body-sm,
+  .zin-bullets li {
+    font-size: 1.3rem;
+  }
+
+  .zin-body-white {
+    font-size: 1.4rem;
+  }
+
+  .zin-muted-text {
+    font-size: 1.1rem;
+  }
+
+  .footer-link,
+  .footer-copy {
+    font-size: 1.2rem;
+  }
+
+  .footer-section-title {
+    font-size: 1.1rem;
+  }
+
+  .zin-kicker-dark,
+  .zin-kicker {
+    font-size: 1.4rem;
+  }
+
+  .faq-btn {
+    font-size: 1.4rem;
+  }
+
+  .faq-answer {
+    font-size: 1.2rem;
+  }
+
+  .price-list li {
+    font-size: 1.2rem;
+  }
+
+  .price-micro {
+    font-size: 1.1rem;
+  }
+
+  .zin-link-orange {
+    font-size: 1.4rem;
+  }
+
+  .step-num {
+    font-size: 3.5rem;
+  }
+
 }

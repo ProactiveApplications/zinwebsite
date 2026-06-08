@@ -24,6 +24,7 @@ const {pageTitle, schema} = Astro.props;
 
 	<body>
 		<Nav />
+
 		<div class="page-header-section">
 			<div class="container">
 				<div class="page-header-content">
@@ -32,8 +33,14 @@ const {pageTitle, schema} = Astro.props;
 			</div>
 		</div>
 
-		<section class="py-4 px-3">
-			<slot />
+		<section class="sec sec-canvas">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12">
+						<slot />
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<Footer />

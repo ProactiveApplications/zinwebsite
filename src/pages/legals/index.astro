@@ -4,33 +4,29 @@ import Layout from '../../layouts/InnerPageLayout.astro';
 ---
 <Layout pageTitle={pageTitle}>
 
-    <section>
-        <div class="grid mt-4 mb-4 pt-4 pb-4 pr-2 pl-2">
+    <div class="zin-legal-list">
 
-            <div class="col-mobile-12 col-3"></div>
+        <article class="zin-legal-item">
+            <a href="/legals/terms-and-conditions/" class="zin-legal-link">
+                <span>Terms and Conditions</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </article>
 
-            <div class="col-mobile-12 col-6">
-            
-                    <article class="legal-row">
-                        <a href="/legals/terms-and-conditions/" class="legal-link">
-                            Terms and Conditions <span>&rarr;</span>
-                        </a>
-                    </article>
-                
-                    <article class="legal-row">
-                        <a href="/legals/privacy-and-cookies/" class="legal-link">
-                            Privacy and Cookies <span>&rarr;</span>
-                        </a>
-                    </article>
-                    
-                    <article class="legal-row">
-                        <a href="/legals/attributions/" class="legal-link">
-                            Attributions <span>&rarr;</span>
-                        </a>
-                    </article>
-                    
-            </div>
-        </div>
-    </section>
+        <article class="zin-legal-item">
+            <a href="/legals/privacy-and-cookies/" class="zin-legal-link">
+                <span>Privacy and Cookies</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </article>
+
+        <article class="zin-legal-item">
+            <a href="/legals/attributions/" class="zin-legal-link">
+                <span>Attributions</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </article>
+
+    </div>
 
 </Layout>

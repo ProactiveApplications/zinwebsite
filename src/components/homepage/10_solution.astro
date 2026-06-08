@@ -1,3 +1,10 @@
+---
+import { getImage } from 'astro:assets';
+import zinInputsSrc from '../../../src/assets/img/zin-inputs-3x.png';
+
+const zinInputs = await getImage({ src: zinInputsSrc, format: 'webp', quality: 85 });
+---
+
   <!-- ============================================================
        SOLUTION
   ============================================================ -->
@@ -13,34 +20,15 @@
         </div>
 
         <div class="col-lg-6">
-          <div class="sol-diagram">
-            <div class="d-flex align-items-center gap-3 mb-1">
-              <div class="sol-src">
-                Past writing
-                <small>posts, emails, notes</small>
-              </div>
-              <span class="sol-arrow">→</span>
-              <div style="min-width:95px;"></div>
-            </div>
-            <div class="d-flex justify-content-end pe-5 mb-1">
-              <div class="sol-connector"></div>
-            </div>
-            <div class="d-flex align-items-center gap-3">
-              <div class="sol-src">
-                Present moments
-                <small>insights, observations</small>
-              </div>
-              <span class="sol-arrow">→</span>
-              <div class="sol-dest">
-                Your library
-                <small>searchable · ready</small>
-              </div>
-            </div>
-          </div>
+          <img
+            src={zinInputs.src}
+            alt="Zin — two sources of input, one searchable library"
+            class="solution-img"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
       </div>
     </div>
   </section>
-
-

@@ -1,3 +1,6 @@
+---
+import CtaBtn from '../website/cta-btn.astro';
+---
 
   <!-- ============================================================
        PRICING
@@ -5,24 +8,65 @@
   <section class="sec sec-light">
     <div class="container">
 
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-7 text-center">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
           <span class="zin-eyebrow">Pricing</span>
           <h2 class="zin-h2">One price. One job. 14 days free.</h2>
         </div>
       </div>
 
-      <div class="price-card">
-        <div class="price-amount"><sup>£</sup>9.97</div>
-        <p class="price-period">per month</p>
-        <ul class="price-list">
-          <li><span class="price-tick">✓</span> No tiers. No upsells.</li>
-          <li><span class="price-tick">✓</span> 14-day free trial included</li>
-          <li><span class="price-tick">✓</span> Cancel anytime — no questions asked</li>
-          <li><span class="price-tick">✓</span> Full refund if cancelled in trial period</li>
-        </ul>
-        <a href="https://thezinapp.com/register/" class="btn-zin btn-zin-full">Start your free trial</a>
-        <span class="price-micro">Zin does one thing extremely well.</span>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="price-card">
+            <div class="price-amount text-center mb-2">
+              £9.97
+              <span class="small">per month</span>
+            </div>
+
+            <ul class="price-list">
+              <li><span class="price-tick">✓</span> No tiers. No upsells.</li>
+              <li><span class="price-tick">✓</span> 14-day free trial included</li>
+              <li><span class="price-tick">✓</span> Cancel anytime — no questions asked</li>
+              <li><span class="price-tick">✓</span> Full refund if cancelled in trial period</li>
+            </ul>
+            <div class="text-center">
+              <CtaBtn />
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-8 text-center">
+          <p class="zin-body-sm mb-3">If you are creating social media content, you're creating content worth far more than £9.97. Zin will provide inspiration, a starting point, an outline, all from real material you've already captured.</p>
+          <p class="zin-body-sm mb-3">With Zin, you never need to sit down to write without something genuine to work with.</p>
+          <p class="zin-body-sm">Zin has a 14 day free trial period.</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-8 text-center">
+
+          <details class="zin-details mb-4">
+            <summary class="zin-details-summary">Cancellation policy</summary>
+            <div class="zin-details-body">
+              <p class="zin-body mb-2">There is no long-term commitment with Zin.</p>
+              <p class="zin-body mb-2">If you cancel during the trial period you will receive a full refund.</p>
+              <p class="zin-body mb-2">After the trial period, you can cancel your Zin subscription at any time.</p>
+              <p class="zin-body">To cancel, send an email to <a href="mailto:support@zincontent.com" class="zin-link-orange">support@zincontent.com</a>. We will cancel your subscription immediately, no questions asked. Refunds are managed by Stripe and are usually issued within 2–3 days.</p>
+            </div>
+          </details>
+
+          <p class="zin-body-sm mb-4">
+            <i class="bi bi-star-fill text-warning me-2" aria-hidden="true"></i>
+            If you would like to generate authentic, stand-out content, click the button below.
+            <i class="bi bi-star-fill text-warning ms-2" aria-hidden="true"></i>
+          </p>
+
+          <CtaBtn subtext="In an age of AI, authenticity is a strategic advantage. Be authentic with Zin." />
+
+        </div>
       </div>
 
     </div>

@@ -1,69 +1,46 @@
 ---
- import CtaBtn from './cta-btn.astro';
+import CtaBtn from '../website/cta-btn.astro';
+import PricingDetails from '../website/pricing.astro';
 ---
-<section>
-    <div class="container-fluid mb-5">
-        <div class="container" id="email">
 
-            <div class="grid">
-                <div class="col-mobile-12 col-12 text-center">
-                    <div class="col-12 col-mobile-12 pt-5 pb-5">
+  <!-- ============================================================
+       PRICING
+  ============================================================ -->
+  <section class="sec sec-light pb-0">
+    <div class="container">
 
-                        <h1>Pricing</h1>
-                        <h2 class="txt-dark">Just £9.97 per month</h2>
-
-                        <p>
-                            One pricing for a tool that does one job extremely well.
-                        </p>
-
-                        <p>
-                            If you are creating social media content, you're creating content worth far more than £9.97.  Zin will provide inspiration, a starting point, an outline, all from real material you've already captured.
-                        </p>
-
-                        <p>
-                            With Zin, you never need to sit down to write without something genuine to work with. 
-                        </p>
-                        <p>
-                            Zin has a 14 day free trial period.
-                        </p>
-                        <details>
-	                        <summary>
-		                        Cancellation policy
-	                        </summary>
-
-                            <p>
-                                There is no long-term commitment with Zin. 
-                            </p>
-                            <p>
-                                If you cancel during the trial period you will receive a full refund. 
-                            </p>
-                            <p>
-                                After the trial period, you can cancel your Zin subscription at any time. 
-                            </p>
-                            <p>
-                                To cancel your subscription, send an email to support@zincontent.com 
-                                <br />
-                                We will cancel your subscription immediately, no questions asked. 
-                                <br />
-                                Refunds are managed by Stripe and are usually issued within 2 - 3 days.
-                            </p>
-
-        
-                        </details>
-                        <p>
-                            <i class="bi bi-star-fill txt-orange mr-2"></i> 
-                            If you would like to generate authentic, stand-out content, click the button below.
-                            <i class="bi bi-star-fill txt-orange mr-2"></i> 
-                        </p>
-
-                        <CtaBtn subtext="In an age of AI, authenticity is a strategic advantage. Be authentic with Zin." />
-                        
-                    </div>
-                </div>  
-            </div>
-           
-
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <span class="zin-eyebrow">Pricing</span>
+          <h2 class="zin-h2">One price. One job. 14 days free.</h2>
         </div>
-    </div>
-</section>
+      </div>
 
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="price-card">
+            <div class="price-amount"><sup>£</sup>9.97</div>
+            <p class="price-period">per month</p>
+            <ul class="price-list">
+              <li><span class="price-tick">✓</span> No tiers. No upsells.</li>
+              <li><span class="price-tick">✓</span> 14-day free trial included</li>
+              <li><span class="price-tick">✓</span> Cancel anytime — no questions asked</li>
+              <li><span class="price-tick">✓</span> Full refund if cancelled in trial period</li>
+            </ul>
+            <CtaBtn />
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-8 text-center">
+          <p>If you are creating social media content, you're creating content worth far more than £9.97. Zin will provide inspiration, a starting point, an outline, all from real material you've already captured.</p>
+          <p>With Zin, you never need to sit down to write without something genuine to work with.</p>
+          <p>Zin has a 14 day free trial period.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <PricingDetails />
