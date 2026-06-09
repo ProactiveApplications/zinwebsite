@@ -110,22 +110,10 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 100;
 }
 
-.zin-logo {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--zin-dark);
-  letter-spacing: -0.02em;
-  text-decoration: none;
-}
-
-.zin-logo span {
-  color: var(--zin-orange);
-}
-
-.zin-logo:hover {
-  color: var(--zin-dark);
-  text-decoration: none;
+.nav-logo {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .zin-nav-link {

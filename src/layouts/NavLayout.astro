@@ -1,7 +1,22 @@
+---
+import { getImage } from 'astro:assets';
+import logoSrc from '../assets/img/navbar-logo.png';
+import CtaBtnSm from '../components/website/cta-btn-sm.astro';
+
+const logo = await getImage({ src: logoSrc, format: 'webp', quality: 90 });
+---
 <header class="zin-nav navbar navbar-expand-lg">
     <div class="container-fluid px-4">
 
-        <a class="zin-logo navbar-brand" href="/">Z<span>i</span>n</a>
+        <a class="navbar-brand" href="/">
+            <img
+                src={logo.src}
+                alt="Zin"
+                class="nav-logo"
+                loading="eager"
+                decoding="async"
+            />
+        </a>
 
         <button
             class="navbar-toggler border-0"
@@ -27,7 +42,7 @@
                     <a class="nav-link zin-nav-link" href="/about-tony-radford">About</a>
                 </li>
                 <li class="nav-item ms-lg-2">
-                    <a class="btn-zin btn-zin-sm" href="https://thezinapp.com/register/">Try free for 14 days</a>
+                    <CtaBtnSm subtext="" />
                 </li>
             </ul>
         </div>
