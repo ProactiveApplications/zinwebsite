@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 ============================================================ */
 .btn-zin {
   background-color: var(--zin-orange);
-  color: var(--zin-white);
+  color: var(--zin-white) !important;
   border: none;
   border-radius: 8px;
   padding: 0.75rem 1.75rem;
@@ -149,15 +149,15 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
   transition: background-color 0.2s ease, transform 0.1s ease;
   display: inline-block;
-  text-decoration: none;
+  text-decoration: none !important;
   cursor: pointer;
 }
 
 .btn-zin:hover {
-  background-color: var(--zin-orange-hover);
-  color: var(--zin-white);
+  background-color: var(--zin-orange-hover) !important;
+  color: var(--zin-white) !important;
   transform: translateY(-1px);
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .btn-zin:active {
