@@ -21,10 +21,31 @@ if (!post) {
 import Layout from '../../layouts/InnerPageLayout.astro';
 import Backlink from '../../components/website/backlink.astro';
 import CtaRow from '../../components/website/cta-row.astro';
+
+const canonicalUrl = new URL(`/blog/${post.data.slug}/`, Astro.site).href;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "datePublished": post.data.date.toISOString(),
+  "mainEntityOfPage": canonicalUrl,
+  "author": {
+    "@type": "Person",
+    "name": "Tony Radford",
+    "url": "https://tonyradford.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tony Radford"
+  }
+};
 ---
 
 
 <Layout pageTitle={post.data.title}>
+
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
     <div class="container">
 

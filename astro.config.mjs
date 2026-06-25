@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
+  site: 'https://zincontent.com',
   output: 'static', // SSG — fully static build, correct for Cloudflare Pages
   adapter: cloudflare({
     imageService: 'compile', // Run Sharp at build time for prerendered pages
