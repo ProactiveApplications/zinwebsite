@@ -20,6 +20,7 @@ if (!post) {
 
 import Layout from '../../layouts/InnerPageLayout.astro';
 import Backlink from '../../components/website/backlink.astro';
+import CtaRow from '../../components/website/cta-row.astro';
 ---
 
 
@@ -34,6 +35,8 @@ import Backlink from '../../components/website/backlink.astro';
             <p class="blog-post-date">{post.data.date.toLocaleDateString()}</p>
 
             <div class="blog-post-content" set:html={post.rendered?.html} />
+
+            <CtaRow />
         </article>
 
     </div>
