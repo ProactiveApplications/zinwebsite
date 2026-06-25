@@ -471,6 +471,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* 
+.blog-post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+} */
 
 /* ============================================================
    SOLUTION — IMAGE

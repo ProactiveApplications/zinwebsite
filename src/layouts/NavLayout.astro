@@ -6,6 +6,7 @@ import CtaBtnSm from '../components/website/cta-btn-sm.astro';
 const logo = await getImage({ src: logoSrc, format: 'webp', quality: 90 });
 ---
 <header class="zin-nav navbar navbar-expand-lg">
+
     <div class="container-fluid px-4">
 
         <a class="navbar-brand" href="/">
@@ -35,9 +36,9 @@ const logo = await getImage({ src: logoSrc, format: 'webp', quality: 90 });
                 <li class="nav-item">
                     <a class="nav-link zin-nav-link" href="/">Home</a>
                 </li>
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link zin-nav-link" href="/blog">Blog</a>
-                </li> -->
+                </li>
                 <li class="nav-item">
                     <a class="nav-link zin-nav-link" href="/about-tony-radford">About</a>
                 </li>

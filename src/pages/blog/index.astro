@@ -1,42 +1,39 @@
 ---
 import { getCollection } from 'astro:content';
+import Layout from '../../layouts/InnerPageLayout.astro';
+
+const pageTitle = 'Blog';
+
 const allBlogPosts = await getCollection('posts', ({ data }) => {
   return data.draft !== true;
 });
-import Layout from '../../layouts/InnerPageLayout.astro';
+
+const sortedPosts = allBlogPosts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 ---
-<Layout pageTitle="Blog">
-    <div class="container mt-5 text-center">
-        Coming soon...
-    </div>
-    <div class="grid mt-4 mb-4 pt-4 pb-4 pr-2 pl-2">
+<Layout pageTitle={pageTitle}>
 
-        <div class="col-mobile-12 col-3"></div>
+    <div class="zin-legal-list">
 
-        <div class="col-mobile-12 col-6">
-            {allBlogPosts.map(post => (
-    <article class="post-row">
-        {/* Title now stands alone at the top */}
-        <a class="blog-post-link" href={`/blog/${post.data.slug}`}>
-            {post.data.title}
-        </a>
-        
-        {/* Description */}
-        <p class="blog-post-description">{post.data.description}</p>
-        
-        {/* New Footer Container */}
-        <div class="post-footer">
-            <span class="post-date">
-                Published on: {post.data.date.toLocaleDateString()}
-            </span>
-            
-            <a class="blog-read-more" href={`/blog/${post.data.slug}`}>
-                Read more &rarr;
-            </a>
-        </div>
-    </article>
-))}
-        </div>
+        {sortedPosts.length === 0 && (
+            <p class="text-center mt-4">Coming soon...</p>
+        )}
+
+        {sortedPosts.map(post => (
+            <article class="zin-legal-item">
+                <a href={`/blog/${post.data.slug}/`} class="zin-legal-link">
+                    <span>
+                        {post.data.title}
+                        <small class="d-block text-muted fw-normal">
+                            {post.data.description} — {post.data.date.toLocaleDateString()}
+                        </small>
+                    </span>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </article>
+        ))}
+
     </div>
-    
+
 </Layout>

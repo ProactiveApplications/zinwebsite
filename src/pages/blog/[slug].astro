@@ -22,15 +22,50 @@ import Layout from '../../layouts/InnerPageLayout.astro';
 import Backlink from '../../components/website/backlink.astro';
 ---
 
+
 <Layout pageTitle={post.data.title}>
 
-    <Backlink />
+    <div class="container">
 
-    <article>
-        <h1>{post.data.title}</h1>
-        <p>{post.data.description}</p>        
-        <!-- Use rendered.html instead of render() -->
-        <div set:html={post.rendered?.html} />
-    </article>
+        <Backlink />
+
+        <article class="blog-post">
+            <h2 class="blog-post-description">{post.data.description}</h2>
+            <p class="blog-post-date">{post.data.date.toLocaleDateString()}</p>
+
+            <div class="blog-post-content" set:html={post.rendered?.html} />
+        </article>
+
+    </div>
 
 </Layout>
+
+<style is:global>
+  .blog-post-description {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .blog-post-date {
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-post-content {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .blog-post-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+  }
+</style>
