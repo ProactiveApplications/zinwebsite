@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
+import rehypeExternalLinks from 'rehype-external-links';
 
 export default defineConfig({
   site: 'https://zincontent.com',
-  output: 'static', // SSG — fully static build, correct for Cloudflare Pages
+  output: 'static',
   adapter: cloudflare({
-    imageService: 'compile', // Run Sharp at build time for prerendered pages
+    imageService: 'compile',
   }),
   server: {
     host: '0.0.0.0',
@@ -13,5 +14,21 @@ export default defineConfig({
   },
   image: {
     domains: ['xo8h-rjxb-rsw5.e2.xano.io'],
-  }
+  },
+  markdown: {
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          target: '_blank',
+          rel: ['noopener', 'noreferrer'],
+          test: (node) => {
+            const href = node.properties?.href;
+            if (typeof href !== 'string' || !href.startsWith('http')) return false;
+            return !href.includes('zincontent.com');
+          },
+        },
+      ],
+    ],
+  },
 });
