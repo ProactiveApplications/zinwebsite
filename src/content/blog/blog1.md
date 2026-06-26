@@ -39,3 +39,13 @@ I use an app I built myself, called Zin, mostly because I want to find the thoug
 
 So if you're feeling frazzled, that's worth trying before anything else. Not because it's profound. Because it's available, right now, and it works.
 
+---
+
+**Elsewhere**
+- [LinkedIn post](https://www.linkedin.com/posts/tonyradford_its-hot-your-brain-is-frazzled-here-activity-7476214500434616321-5oXM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAEpLYBT75kAzyYnIow2mdWdCb61mR-j7U) — the original
+- [Threads post](https://www.threads.com/@thetonyradford/post/DaC672lDcA9?xmt=AQG0_JX1Rfrcpt_7bHAKYBUxwVfCe0pxdOiPJ8dv4ZRE2A)
+
+- More from David Allen: [Getting Things Done](https://bookfave.com/book/getting-things-done)
+ 
+Author: Tony Radford — [tonyradford.com](https://tonyradford.com/)
+ 
