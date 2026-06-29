@@ -1,30 +1,48 @@
----
-import { getImage } from 'astro:assets';
-import heroSrc from '../../../src/assets/img/zin-hero-female.jpg';
-
-const heroImg = await getImage({ src: heroSrc, format: 'webp', quality: 85 });
----
-
-  <!-- ============================================================
-       HERO — full bleed background image
+<!-- ============================================================
+       HERO — flat light background, no image, left-aligned, full width
   ============================================================ -->
   <section
     class="hero-fullbleed"
-    style={`background-image: url('${heroImg.src}')`}
     id="hero"
   >
-    <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="hero-text">
-        
-        <h1 class="zin-h1 zin-h1-hero mb-4">Zin helps people with ideas and scattered content finally get organised.</h1>
+
+        <span class="zin-eyebrow">For people whose ideas are scattered, but have something worth saying.</span>
+
+        <h1 class="zin-h1 zin-h1-hero mb-4">Build a library of your thinking.</h1>
 
         <p class="hero-sub-copy mb-4">
-          Bring everything into Zin. 
-          <br />
-          Save the content you've already written. Capture good ideas before you lose them. 
-          <br />
-          Experience relief because everything is now easily findable and ready to use whenever you need it.</p>
+          Capture your thoughts as they happen. Mine your past writing. Zin builds the library.
+        </p>
+
+        <ul class="zin-bullets mb-4">
+          <li>
+            <span class="zin-tick">
+              <svg viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <path d="M2 5l2 2 4-4" stroke="#fd7e15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Never lose a good idea again.
+          </li>
+          <li>
+            <span class="zin-tick">
+              <svg viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <path d="M2 5l2 2 4-4" stroke="#fd7e15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Reuse years of old writing.
+          </li>
+          <li>
+            <span class="zin-tick">
+              <svg viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <path d="M2 5l2 2 4-4" stroke="#fd7e15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Sound like you, not like everyone else.
+          </li>
+        </ul>
+
         <a href="https://thezinapp.com/register/" class="btn-zin">Try Zin free for 14 days</a>
         <span class="zin-muted-text d-block mt-2">No commitment. Cancel anytime.</span>
       </div>

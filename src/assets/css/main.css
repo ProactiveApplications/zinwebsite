@@ -312,6 +312,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--zin-dark);
 }
 
+.sec-dark-2 {
+  background-color: var(--zin-dark-2);
+}
+
 .sec-tint {
   background-color: var(--zin-orange-tint);
 }
@@ -348,6 +352,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-body);
 }
 
+/* Bullet text variant for dark backgrounds, matches the
+   secondary-text tone already used in the footer (#c8c8e0). */
+.zin-bullets-white li {
+  color: #c8c8e0;
+}
+
 .zin-tick {
   width: 18px;
   height: 18px;
@@ -367,57 +377,46 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* ============================================================
-   HERO — FULL BLEED BACKGROUND IMAGE
+   HERO — 
 ============================================================ */
 
-/* Hero headline size — one-off lift for homepage only */
 .zin-h1-hero {
   font-size: 5rem;
   line-height: 1.05;
 }
 
+/* Hero — flat light background, no image */
 .hero-fullbleed {
   position: relative;
-  background-size: cover;
-  background-position: center 30%;
-  background-repeat: no-repeat;
+  background-color: var(--zin-off-white);
   display: flex;
   align-items: center;
 }
 
-/* Dark overlay — preserves image warmth while making text legible */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.48);
-}
-
-/* Content sits above the overlay */
+/* Content sits above, full width, centred.
+   No min-height — height now comes from padding and content only,
+   not a forced share of the viewport. The 88vh rule was tuned for
+   a full-bleed photo and left far too much empty space once the
+   hero became flat colour and text only. */
 .hero-content {
   position: relative;
   z-index: 1;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 88vh;
 }
 
-/* Text block — full width of container, centred */
+/* Text block — full width of container, left-aligned */
 .hero-text {
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
-/* Hero headline colour override — white on image */
-.hero-fullbleed .zin-h1 {
-  color: var(--zin-white);
-}
-
-.hero-fullbleed .zin-h1 em {
-  color: var(--zin-orange);
-}
+/* No hero-specific heading colour needed any more — the default
+   .zin-h1 colour (dark) and .zin-h1 em colour (orange, set
+   globally above) already do the job now the background is light. */
 
 /* Eyebrow on dark background */
 .zin-eyebrow-light {
@@ -425,28 +424,18 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.875rem;
 }
 
-/* Sub-copy on image */
+/* Sub-copy on light background */
 .hero-sub-copy {
   font-family: var(--font-body);
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--zin-body-text);
   line-height: var(--lh-body);
 }
 
-/* Muted text on hero image — override to readable white */
-.hero-fullbleed .zin-muted-text {
-  color: rgba(255, 255, 255, 0.6);
-}
+/* No override needed here either — the default .zin-muted-text
+   colour already reads fine against the light hero background. */
+
 @media (max-width: 767px) {
-  .hero-fullbleed {
-    background-image: none !important;
-    background-color: var(--zin-dark);
-  }
-
-  .hero-overlay {
-    display: none;
-  }
-
   .hero-content {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
@@ -471,13 +460,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* 
-.blog-post-content img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 2rem auto;
-} */
+
 
 /* ============================================================
    SOLUTION — IMAGE
