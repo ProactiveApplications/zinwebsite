@@ -5,36 +5,34 @@ import zinInputsSrc from '../../../src/assets/img/zin-inputs.PNG';
 const zinInputs = await getImage({ src: zinInputsSrc, format: 'webp', quality: 85 });
 ---
 
-  <!-- ============================================================
-       SOLUTION
-  ============================================================ -->
-  <section class="sec sec-light">
+<section class="sec sec-light">
     
-    <div class="container">
+  <div class="container">
 
-      <div class="row align-items-center g-5">
+    <div class="row align-items-center g-5">
 
-        <div class="col-lg-6">
-          <span class="zin-eyebrow">Gather your thinking</span>
-          <h2 class="zin-h2 zin-h2-sm mb-3">Your past writing and present thinking are unique raw material. Zin makes them usable.</h2>
-          <p class="zin-body mb-3">
-            Most people have years of great ideas and their best thinking locked-up in old posts, emails, notebooks. This content is a gold mine for your thinking and a valueable asset if you write content.
-          </p>
-          <p class="zin-body">
-          Use Zin to harvest ideasfrom your old content, organise them and store them safely.
-          </p>
-        </div>
-
-        <div class="col-lg-6">
-          <img
-            src={zinInputs.src}
-            alt="Zin — two sources of input, one searchable library"
-            class="solution-img"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-
+      <div class="col-lg-6">
+        <span class="zin-eyebrow">Gather your thinking</span>
+        <h2 class="zin-h2 zin-h2-sm mb-3">Your past writing and present thinking are unique raw material. Zin makes them usable.</h2>
+        <p class="zin-body mb-3">
+          Most people have years of great ideas and their best thinking locked-up in old posts, emails, notebooks. This content is a gold mine for your thinking and a valueable asset if you write content.
+        </p>
+        <p class="zin-body">
+        Use Zin to harvest ideas from your old content, organise them and store them safely.
+        </p>
       </div>
+
+      <div class="col-lg-6">
+        <img
+          src={zinInputs.src}
+          alt="Zin — two sources of input, one searchable library"
+          class="solution-img"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
     </div>
-  </section>
+  </div>
+
+</section>
