@@ -8,13 +8,25 @@ const zinInputs = await getImage({ src: zinImage1, format: 'webp', quality: 85 }
   
     <div class="container">
 
-      <div class="row">
-          <img
-               src={zinImage1.src}
-               alt="Zin — two sources of input, one searchable library"
-               class="solution-img border"
-               loading="lazy"
-               decoding="async"
-          />
+      <div class="row mb-3">
+          <h2 class="zin-h2">Find what you need, fast</h2>
+          <p class="zin-body">
+               Find any thoughts using Zin's powerful filtering features. 
+               Filter by topic, hashtag, text, date or any combination.
+          </p>
+          <p class="zin-body">
+               Zin's filtering works at the level of the zin itself, a sentence, a paragraph, a single thought, so a filter or search returns the only the thoughts you actually want to use.
+          </p>
+      </div>
+     <div class="row">
+          <div class="col-12">
+               <img
+                    src={zinImage1.src}
+                    alt="Zin — two sources of input, one searchable library"
+                    class="solution-img border"
+                    loading="lazy"
+                    decoding="async"
+               />
+          </div>
      </div>
 </section>      
