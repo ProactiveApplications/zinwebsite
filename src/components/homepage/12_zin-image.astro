@@ -1,0 +1,20 @@
+---
+import { getImage } from 'astro:assets';
+import zinImage1 from '../../assets/img/zin1.PNG';
+
+const zinInputs = await getImage({ src: zinImage1, format: 'webp', quality: 85 });
+---
+<section class="sec sec-canvas">
+  
+    <div class="container">
+
+      <div class="row">
+          <img
+               src={zinImage1.src}
+               alt="Zin — two sources of input, one searchable library"
+               class="solution-img border"
+               loading="lazy"
+               decoding="async"
+          />
+     </div>
+</section>      
