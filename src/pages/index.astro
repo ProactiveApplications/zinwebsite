@@ -2,11 +2,14 @@
 const pageTitle = 'Home';
 import Layout from '../layouts/MainLayout.astro';
 import Hero from '../components/homepage/01_hero.astro';
+import Problem from '../components/homepage/05_problem.astro';
 import ZinImage1 from '../components/homepage/12_zin-image.astro';
 import Solution from '../components/homepage/10_solution.astro';
 import HowItWorks from '../components/homepage/15_how_it_works.astro';
 import CtaRow from '../components/website/cta-row.astro';
 import Audience from '../components/homepage/20_audience.astro';
+import WhyNeedLibrary from '../components/homepage/22_why_need_library.astro';
+import AIComparison from '../components/homepage/23_ai_tools_comparison.astro';
 import FAQs from '../components/homepage/25_faqs.astro';
 import NegSection from '../components/homepage/30_negsection.astro';
 import Pricing from '../components/homepage/35_pricing.astro';
@@ -15,11 +18,14 @@ import BackToTop from '../components/website/back-to-top.astro';
 <Layout pageTitle={pageTitle}>
 
 	<Hero />
+	<Problem />
 	<Solution />
 	<ZinImage1 />
 	<HowItWorks />
 	<CtaRow heading="Start building your library of thinking now" />
 	<Audience />
+	<WhyNeedLibrary />
+	<AIComparison />
 	<FAQs />
 	<NegSection />
 	<Pricing />

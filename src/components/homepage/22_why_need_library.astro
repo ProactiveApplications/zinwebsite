@@ -1,0 +1,53 @@
+---
+import { getImage } from 'astro:assets';
+import libraryImage from '../../../src/assets/img/pexels-mehmetakifarts-37330363.webp';
+
+const zinInputs = await getImage({ src: libraryImage, format: 'webp', quality: 85 });
+---
+<!-- ============================================================
+       WHY A LIBRARY — NOT JUST NOTES
+  ============================================================ -->
+<section class="sec sec-tint" id="why-need-library">
+  <div class="container sec-white p-4 rounded-3 shadow">
+
+    <div class="row">
+      <div class="col-12 col-md-4">
+
+        <img
+          src={libraryImage.src}
+          alt="Zin — why a library - libraries compound"
+          class="solution-img"
+          loading="lazy"
+          decoding="async"
+        />
+
+      </div>
+      <div class="col-md-8 ps-2">
+
+        <span class="zin-eyebrow">Why a library</span>
+        <h2 class="zin-h2 mb-3">Notes capture. Libraries compound.</h2>
+
+        <p class="zin-body mb-3">
+          <b>A note sits on its own.</b> 
+          <br />
+          It holds a single thought, unconnected to anything else you have written, and it stays exactly as valuable as the day you wrote it.
+        </p>
+
+        <p class="zin-body mb-3">
+          <b>A library accumulates.</b> 
+          <br />
+          Ideas gather across time and start to relate to each other. You read through a topic and a thought from three months ago meets something you captured yesterday, and together they produce something neither could have made alone.
+        </p>
+
+        <p class="zin-body mb-0">
+          <b>That is the difference.</b> 
+          <br />
+          A note is worth what it says. A library is worth what it connects, and the longer it runs, the more it is worth.
+        </p>
+
+      </div>
+      
+    </div>
+
+  </div>
+</section>

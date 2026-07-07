@@ -304,6 +304,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.orange-text{
+  color: var(--zin-orange);
+}
+
 /* ============================================================
    SECTIONS
 ============================================================ */
@@ -327,6 +331,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--zin-dark-2);
 }
 
+.sec-dark-3 {
+  background-color: var(--zin-dark-3);
+}
+
 .sec-tint {
   background-color: var(--zin-orange-tint);
 }
@@ -345,6 +353,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1.75rem;
 }
 
+
 /* Centred variant — centres the list block within its container */
 .zin-bullets-center {
   display: inline-flex;
@@ -361,14 +370,15 @@ h1, h2, h3, h4, h5, h6 {
   color: #3d3d4e;
   font-size: var(--text-body);
   font-family: var(--font-body);
+  line-height: 2;
 }
 
 /* Bullet text variant for dark backgrounds, matches the
    secondary-text tone already used in the footer (#c8c8e0). */
+
 .zin-bullets-white li {
   color: #c8c8e0;
 }
-
 .zin-tick {
   width: 18px;
   height: 18px;
@@ -378,12 +388,18 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
+  font-size: 1rem;
+  margin-top: 4px;
 }
 
-.zin-tick svg {
-  width: 10px;
-  height: 10px;
+.zin-tick i {
+  font-size: 0.72em;
+  line-height: 1;
+  display: block;
+}
+
+.zin-bullet-text {
+  min-width: 0;
 }
 
 
@@ -463,6 +479,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .zin-eyebrow-light {
     font-size: 0.75rem;
+  }
+
+  .zin-tick {
+    margin-top: 8px;
   }
 
   .hero-micro {

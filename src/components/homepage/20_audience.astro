@@ -1,31 +1,61 @@
-<!-- ============================================================
-       AUDIENCE — IDENTITY + ROUTING
-  ============================================================ -->
+---
+import { getImage } from 'astro:assets';
+import audienceImage from '../../../src/assets/img/pexels-karola-g-5908758.webp';
+
+const zinInputs = await getImage({ src: audienceImage, format: 'webp', quality: 85 });
+---
   <section class="sec sec-light">
     <div class="container">
 
       <div class="row">
-        <div class="col-md-8">
-          <span class="zin-eyebrow">Who it's for</span>
-          <h2 class="zin-h2 mb-4">Zin is for thinking content creators.</h2>
-          <p class="zin-body mb-2">
-            People with real experience, stories and opinions who want to communicate their ideas to the world.
-          </p>
-          <p class="zin-body mb-2">
-            People who've been writing for years and suspect there's more value in it than they've used.
-          </p>
-          <p class="zin-body">
-            People who want to publish consistently without it becoming another project.
-          </p>
+        <div class="col-md-8 pe-5">
+          <span class="zin-eyebrow">Who Zin is for</span>
+          <h2 class="zin-h2 mb-4">For people who want more from their own thinking.</h2>
+
+          <p class="zin-body mb-2"><i class="bi bi-check orange-text me-2"></i>
+People who keep losing the ideas that matter most. The insight that arrived at the wrong moment. The thing you said in a meeting that landed, and then disappeared.
+</p>
+
+<p class="zin-body mb-2"><i class="bi bi-check orange-text me-2"></i>
+People who have been writing and thinking for years and suspect there is more value in it than they have ever been able to reach.
+</p>
+
+<p class="zin-body mb-2"><i class="bi bi-check orange-text me-2"></i>
+People who use AI and want the output to sound like them, not like everyone else using the same tools.
+</p>
+
+<p class="zin-body mb-2"><i class="bi bi-check orange-text me-2"></i>
+People who want to think more clearly, remember more reliably, and build on what they already know, whether or not they ever publish a word.
+</p>
+
+<p class="zin-body mb-2"><i class="bi bi-check orange-text me-2"></i>
+Zin earns its keep fastest if you publish regularly, work with clients, or build your credibility through what you know.
+</p>
+
+<p class="zin-body mb-2">
+Zin is <b>not for everyone</b>. If you want AI to do the thinking for you, Zin will disappoint you. 
+</p>
+
+<p class="zin-body mb-2">
+And Zin is <b>not a publishing suite</b>. It captures, organises and assembles. Other tools handle the rest.
+</p>
+
+          
 
         </div>
 
-        <div class="col-sm-4">
-          <!-- <h3 class="zin-h3 mb-2">Zin is for...</h3>
-          <p class="zin-body-sm mb-4">
-            Zin works differently for different people. 
-          </p> -->
-        </div>
+        
+      <div class="col-12 col-md-4">
+
+         <img
+          src={audienceImage.src}
+          alt="Zin — lack of capture is the problem"
+          class="solution-img"
+          loading="lazy"
+          decoding="async"
+        />
+
+      </div>
       </div>
 
     </div>

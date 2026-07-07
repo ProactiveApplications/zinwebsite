@@ -4,30 +4,34 @@ import zinImage1 from '../../assets/img/zin1.PNG';
 
 const zinInputs = await getImage({ src: zinImage1, format: 'webp', quality: 85 });
 ---
-<section class="sec sec-canvas">
-  
-    <div class="container">
 
-      <div class="row mb-3">
-           <span class="zin-eyebrow">Your library of thinking</span>
-          <h2 class="zin-h2">Find what you need, fast</h2>
-          <p class="zin-body">
-               Find any thoughts using Zin's powerful filtering features. 
-               Filter by topic, hashtag, text, date or any combination.
-          </p>
-          <p class="zin-body">
-               Zin's filtering works at the level of the zin itself, a sentence, a paragraph, a single thought, so a filter or search returns the only the thoughts you actually want to use.
-          </p>
+<section class="sec sec-canvas">
+
+  <div class="container">
+
+    <div class="row mb-3">
+      <span class="zin-eyebrow">Your library of thinking</span>
+      <h2 class="zin-h2">Meet your own thinking in Zin.</h2>
+      <p class="zin-body">
+        Filter to a topic to see everything you have thought about it. Often there is more there that you think. Sometimes you see a pattern for the first time or a contradiction across entries written months apart. 
+      </p>
+      <p class="zin-body">
+        Zin filters at the level of the individual thought. A topic, a hashtag, free text, a date range. Results return exactly what you are looking for, not the whole document it sat inside. Filter by date range to see what you were thinking at any given time.
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <img
+          src={zinImage1.src}
+          alt="Zin — filter and browse your library of thinking"
+          class="solution-img border"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-     <div class="row">
-          <div class="col-12">
-               <img
-                    src={zinImage1.src}
-                    alt="Zin — two sources of input, one searchable library"
-                    class="solution-img border"
-                    loading="lazy"
-                    decoding="async"
-               />
-          </div>
-     </div>
-</section>      
+    </div>
+
+  </div>
+
+</section>

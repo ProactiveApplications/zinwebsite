@@ -1,54 +1,45 @@
-<!-- ============================================================
-       PROBLEM
-  ============================================================ -->
-  <section class="sec sec-dark-2">
+---
+import { getImage } from 'astro:assets';
+import problemImage from '../../../src/assets/img/pexels-karola-g-5908818.webp';
+
+const zinInputs = await getImage({ src: problemImage, format: 'webp', quality: 85 });
+---
+  <section class="sec sec-light">
+
     <div class="container">
 
-      <div class="row justify-content-center">
+      <div class="row">
 
-        <div class="col-12 text-center">
+        <div class="col-sm-12 col-md-8 pe-5">
 
-          <h2 class="zin-h2 zin-h2-white mb-4">By the time you sit down to write, the thought is gone.</h2>
+          <span class="zin-eyebrow">The lost thought problem.</span>
 
-          <ul class="zin-bullets zin-bullets-center zin-bullets-white mb-4">
-            <li>
-              <span class="zin-tick">
-                <svg viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                  <path d="M2 5l2 2 4-4" stroke="#fd7e15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              The insight from that client call.
-            </li>
-            <li>
-              <span class="zin-tick">
-                <svg viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                  <path d="M2 5l2 2 4-4" stroke="#fd7e15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              The phrase that arrived on your walk.
-            </li>
-            <li>
-              <span class="zin-tick">
-                <svg viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                  <path d="M2 5l2 2 4-4" stroke="#fd7e15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              The observation you had at 7am.
-            </li>
-            <li>
-              <span class="zin-tick">
-                <svg viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                  <path d="M2 5l2 2 4-4" stroke="#fd7e15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              Your brain filtered it out before you could use it.
-            </li>
-          </ul>
+          <h2 class="zin-h2 mb-4">That great idea lasts about 10-20 seconds</h2>
 
-          <p class="zin-body zin-body-white mb-4">So you stare at the screen. Or you ask AI. What comes back could have been written by anyone.</p>
+          <p class="zin-body mb-3">
+            If you keep walking and don’t repeat the thought to yourself, it may vanish before you reach for your phone. This includes your thought, insights and great ideas.
+          </p>
 
-          <!-- <p class="zin-kicker-dark fw-bold">Your expertise isn't the problem. Your thinking is just <em>inaccessible.</em></p> -->
+          <p class="zin-body mb-3">
+             Every longer-term thought is an open loop that keeps the brain constantly checking that it is still there. It  feels like distraction, or overwhelm, or being tired for no reason.
+          </p>
+          
+          <p class="zin-body mb-3">
+            The thoughts you did write down are not much better off, buried in years of posts, emails, documents and half-finished drafts. None of it available when it matters.
+          </p>
 
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+
+          <img
+          src={problemImage.src}
+          alt="Zin — lack of capture is the problem"
+          class="solution-img"
+          loading="lazy"
+          decoding="async"
+        />
+          
         </div>
       </div>
     </div>
