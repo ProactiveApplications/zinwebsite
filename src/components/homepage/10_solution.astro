@@ -1,6 +1,6 @@
 ---
 import { getImage } from 'astro:assets';
-import zinInputsSrc from '../../../src/assets/img/zin-inputs.PNG';
+import zinInputsSrc from '../../assets/img/zin-inputs.PNG';
 
 const zinInputs = await getImage({ src: zinInputsSrc, format: 'webp', quality: 85 });
 ---
@@ -9,7 +9,20 @@ const zinInputs = await getImage({ src: zinInputsSrc, format: 'webp', quality: 8
     
   <div class="container">
 
-    <div class="row align-items-center g-5">
+    <div class="row">
+      <div class="col-12">
+
+        <p>
+          <span class="zin-eyebrow">Zin is the perfect stores for all your thoughts</span>
+        </p>
+        <h2 class="zin-h2 zin-h2-sm mb-3">
+          Capture your thoughts. Mine your content. Add it all to Zin. 
+        </h2>
+
+      </div>
+    </div>
+
+    <div class="row align-items-center">
 
       <div class="col-md-6">
         <img
@@ -23,18 +36,12 @@ const zinInputs = await getImage({ src: zinInputsSrc, format: 'webp', quality: 8
 
       <div class="col-md-6">
         
-        <span class="zin-eyebrow">Zin does the remembering. Your mind does the thinking.</span>
-        
-        <h2 class="zin-h2 zin-h2-sm mb-3">
-          One place to keep your thoughts. Two types of input.
-        </h2>
-        
-        <p class="zin-body mb-3">
-          Zin enables you to harvest your ideas from your past writing. The value you already created comes back within reach.
+        <p class="zin-body">
+          Capture your thoughts in seconds at your desk or on your phone. 
         </p>
 
-        <p class="zin-body">
-          New thinking is caught in seconds at your desk or on your phone. 
+        <p class="zin-body mb-3">
+          Harvest your ideas from your past writing. The value you once created becomes available to you again.
         </p>
 
         <p class="zin-body">
