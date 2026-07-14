@@ -27,8 +27,8 @@
   --zin-border-light:  #f0f0f4;
 
   /* Fonts — change here to update everywhere */
-  --font-display:      'Roboto', sans-serif;
-  --font-body:         'Roboto', sans-serif;
+  --font-display:      'Sora', sans-serif;
+  --font-body:         'Plus Jakarta Sans', sans-serif;
 
   /* Type scale — change here to update everywhere */
   --text-h1:           2.64rem;
@@ -413,14 +413,13 @@ h1, h2, h3, h4, h5, h6 {
 ============================================================ */
 
 .zin-h1-hero {
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 1.05;
 }
 
-/* Hero — flat light background, no image */
+/* Hero — layout only, background colour set by sec-* class on the element */
 .hero-fullbleed {
   position: relative;
-  background-color: var(--zin-off-white);
   display: flex;
   align-items: center;
 }
@@ -975,4 +974,47 @@ details[open] .zin-details-summary::after {
     font-size: 3.5rem;
   }
 
+}
+
+/* ============================================================
+   HERO — IMAGINE CARDS
+   Three cards on one row (desktop), stacked on mobile.
+   Light grey background with orange accent border.
+============================================================ */
+.hero-imagine-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.hero-imagine-card {
+  background-color: var(--zin-off-white);
+  border: 1px solid rgba(253, 126, 21, 0.18);
+  border-radius: 12px;
+  padding: 1.25rem 1.1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hero-card-num {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--zin-white);
+  background-color: var(--zin-orange);
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+  line-height: 1.5;
+  align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+  .hero-imagine-cards {
+    grid-template-columns: 1fr;
+  }
 }
