@@ -309,6 +309,10 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
+.bg-orange{
+  background-color: var(--zin-orange);
+}
+
 .orange-text{
   color: var(--zin-orange);
 }
@@ -413,8 +417,8 @@ h1, h2, h3, h4, h5, h6 {
 ============================================================ */
 
 .zin-h1-hero {
-  font-size: 4rem;
-  line-height: 1.05;
+  font-size: 4.5rem;
+  line-height: 1.075;
 }
 
 /* Hero — layout only, background colour set by sec-* class on the element */
